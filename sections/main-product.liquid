@@ -475,9 +475,9 @@
                   render 'share-button', block: block, share_link: share_url
                 %}
 
-              {%- when 'eva-size-guide' -%}
+              {%- when 'sizeguide' -%}
                 {% render 'eva-size-guide' %}
-              {%- when 'eva-urgency' -%}
+              {%- when 'urgency' -%}
                 {% render 'eva-urgency-badge', product: product %}
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -752,12 +752,12 @@
       "type": "@app"
     },
     {
-      "type": "eva-size-guide",
+      "type": "sizeguide",
       "name": "Guia de tamanhos",
       "limit": 1
     },
     {
-      "type": "eva-urgency",
+      "type": "urgency",
       "name": "Badge de urgência (estoque)",
       "limit": 1
     },
