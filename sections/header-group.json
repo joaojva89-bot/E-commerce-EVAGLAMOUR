@@ -1,0 +1,77 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "ann-frete": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚚 Frete grátis a partir de R$150 para Goiás e DF",
+            "link": ""
+          }
+        },
+        "ann-originais": {
+          "type": "announcement",
+          "settings": {
+            "text": "✓ Todos os produtos 100% originais",
+            "link": ""
+          }
+        },
+        "ann-amada": {
+          "type": "announcement",
+          "settings": {
+            "text": "💗 EVA GLAMOUR — A mais amada do Brasil",
+            "link": ""
+          }
+        },
+        "ann-parcelas": {
+          "type": "announcement",
+          "settings": {
+            "text": "💳 Parcele em até 10x sem juros",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "ann-frete",
+        "ann-originais",
+        "ann-amada",
+        "ann-parcelas"
+      ],
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 4,
+        "color_scheme": "scheme-3",
+        "show_line_separator": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

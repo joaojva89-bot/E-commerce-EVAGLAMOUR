@@ -1,0 +1,54 @@
+{%- comment -%}Eva Glamour Brand Marquee v5 -- logos CDN + filter para logos brancos + loop infinito{%- endcomment -%}
+
+<style>
+  .eva-marquee-section { width:100%; background:#ffffff; border-top:1px solid #ebebeb; border-bottom:1px solid #ebebeb; padding:28px 0; overflow:hidden; position:relative; }
+  .eva-marquee-section::before, .eva-marquee-section::after { content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none; }
+  .eva-marquee-section::before { left:0; background:linear-gradient(to right, #ffffff, transparent); }
+  .eva-marquee-section::after { right:0; background:linear-gradient(to left, #ffffff, transparent); }
+  .eva-marquee-track { display:flex; align-items:center; width:max-content; animation:eva-scroll-left 28s linear infinite; will-change:transform; }
+  .eva-marquee-section:hover .eva-marquee-track { animation-play-state:paused; }
+  .eva-marquee-item { display:flex; align-items:center; justify-content:center; padding:0 56px; position:relative; flex-shrink:0; }
+  .eva-marquee-item::after { content:'\00B7'; position:absolute; right:0; color:#d0d0d0; font-size:24px; line-height:1; }
+  .eva-marquee-item img { height:52px; width:auto; max-width:180px; object-fit:contain; object-position:center; display:block; opacity:0.75; transition:opacity 0.3s ease, transform 0.3s ease; }
+  .eva-marquee-item:hover img { opacity:1; transform:scale(1.07); }
+  /* Logos brancos precisam de inversao para aparecer no fundo branco */
+  .eva-marquee-item[data-brand="actvitta"] img,
+  .eva-marquee-item[data-brand="modare"] img,
+  .eva-marquee-item[data-brand="beira-rio"] img { filter: brightness(0); opacity:0.65; }
+  .eva-marquee-item[data-brand="actvitta"]:hover img,
+  .eva-marquee-item[data-brand="modare"]:hover img,
+  .eva-marquee-item[data-brand="beira-rio"]:hover img { opacity:1; }
+  .eva-marquee-label { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#aaa; margin-bottom:18px; text-align:center; font-family:Helvetica,Arial,sans-serif; }
+  @keyframes eva-scroll-left { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+</style>
+
+{%- if section.settings.label != blank -%}
+<p class="eva-marquee-label">{{ section.settings.label }}</p>
+{%- endif -%}
+
+<section class="eva-marquee-section" aria-label="Marcas parceiras">
+  <div class="eva-marquee-track">
+    {%- comment -%} SET 1 {%- endcomment -%}
+    <div class="eva-marquee-item" data-brand="actvitta"><img src="https://www.actvitta.com.br/wp-content/uploads/2025/03/LOGO_SITE_actvitta_25-03-1.png" alt="Actvitta" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="moleca"><img src="https://www.moleca.com.br/wp-content/uploads/2025/02/LOGO_SITE_MOLECA_25.png" alt="Moleca" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="vizzano"><img src="https://www.vizzano.com.br/wp-content/uploads/2025/02/Logo_Vizzano-PRETO.png" alt="Vizzano" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="modare"><img src="https://www.modareultraconforto.com.br/wp-content/uploads/2025/02/logoMD_BRANCO.png" alt="Modare Ultra Conforto" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="beira-rio"><img src="https://www.beirario.com.br/wp-content/uploads/2025/02/cropped-LOGO_SITE_BR_25_Prancheta-1.png" alt="Beira Rio" height="52" loading="lazy"></div>
+    {%- comment -%} SET 2 (JS clona mais se necessario) {%- endcomment -%}
+    <div class="eva-marquee-item" data-brand="actvitta" aria-hidden="true"><img src="https://www.actvitta.com.br/wp-content/uploads/2025/03/LOGO_SITE_actvitta_25-03-1.png" alt="Actvitta" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="moleca" aria-hidden="true"><img src="https://www.moleca.com.br/wp-content/uploads/2025/02/LOGO_SITE_MOLECA_25.png" alt="Moleca" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="vizzano" aria-hidden="true"><img src="https://www.vizzano.com.br/wp-content/uploads/2025/02/Logo_Vizzano-PRETO.png" alt="Vizzano" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="modare" aria-hidden="true"><img src="https://www.modareultraconforto.com.br/wp-content/uploads/2025/02/logoMD_BRANCO.png" alt="Modare Ultra Conforto" height="52" loading="lazy"></div>
+    <div class="eva-marquee-item" data-brand="beira-rio" aria-hidden="true"><img src="https://www.beirario.com.br/wp-content/uploads/2025/02/cropped-LOGO_SITE_BR_25_Prancheta-1.png" alt="Beira Rio" height="52" loading="lazy"></div>
+  </div>
+</section>
+
+<script>
+(function(){function f(){var s=document.querySelector('.eva-marquee-section'),t=document.querySelector('.eva-marquee-track');if(!s||!t)return;var o=Array.prototype.slice.call(t.querySelectorAll('.eva-marquee-item:not([aria-hidden])'));if(!o.length)return;Array.prototype.forEach.call(t.querySelectorAll('.eva-marquee-item[aria-hidden]'),function(e){e.remove();});var n=window.innerWidth*2,c=1;function loop(){if(t.scrollWidth>=n||c>=8)return done();o.forEach(function(i){var cl=i.cloneNode(true);cl.setAttribute('aria-hidden','true');t.appendChild(cl);});c++;loop();}function done(){var p=(100/c).toFixed(3),el=document.getElementById('eva-mq-kf')||document.createElement('style');el.id='eva-mq-kf';el.textContent='@keyframes eva-scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-'+p+'%)}}';document.head.appendChild(el);}if(t.scrollWidth>0){loop();}else{window.addEventListener('load',loop);}var r;window.addEventListener('resize',function(){clearTimeout(r);r=setTimeout(f,200);});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}})();
+</script>
+
+{% schema %}
+{ "name": "Marquee de Marcas", "tag": "div", "class": "eva-brand-marquee-section",
+  "settings": [{"type":"text","id":"label","label":"Texto acima do marquee","default":"Nossas Marcas"}],
+  "presets": [{"name":"Marquee de Marcas"}] }
+{% endschema %}
