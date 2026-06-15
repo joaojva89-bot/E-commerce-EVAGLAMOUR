@@ -6,15 +6,15 @@
         "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
         "title": { "type": "title", "settings": {} },
         "price": { "type": "price", "settings": {} },
-        "eva_urgency": { "type": "eva_urgency", "settings": {} },
+        "eva-urgency": { "type": "eva-urgency", "settings": {} },
         "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "eva_size_guide": { "type": "eva_size_guide", "settings": {} },
+        "eva-size-guide": { "type": "eva-size-guide", "settings": {} },
         "quantity_selector": { "type": "quantity_selector", "settings": {} },
         "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
         "description": { "type": "description", "settings": {} },
         "share": { "type": "share", "settings": { "share_label": "Compartilhar" } }
       },
-      "block_order": ["vendor", "title", "price", "eva_urgency", "variant_picker", "eva_size_guide", "quantity_selector", "buy_buttons", "description", "share"],
+      "block_order": ["vendor", "title", "price", "eva-urgency", "variant_picker", "eva-size-guide", "quantity_selector", "buy_buttons", "description", "share"],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
