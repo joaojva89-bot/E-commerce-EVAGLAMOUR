@@ -98,10 +98,6 @@
   }
 </style>
 
-{%- assign star_svg -%}
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-{%- endassign -%}
-
 <div class="eva-depoimentos page-width">
   <div class="eva-depoimentos__header">
     <h2 class="eva-depoimentos__title h2">{{ section.settings.title }}</h2>
@@ -113,7 +109,7 @@
       {%- if block.type == 'depoimento' -%}
         <div class="eva-depoimentos__card" {{ block.shopify_attributes }}>
           <div class="eva-depoimentos__stars">
-            {{ star_svg }}{{ star_svg }}{{ star_svg }}{{ star_svg }}{{ star_svg }}
+            {%- for i in (1..5) -%}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1.6rem;height:1.6rem;fill:#f5a623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>{%- endfor -%}
           </div>
           <p class="eva-depoimentos__text">"{{ block.settings.texto }}"</p>
           <div class="eva-depoimentos__author">
