@@ -4,11 +4,42 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "bloco_sobre": {
+          "type": "brand_information",
+          "settings": {
+            "heading": "",
+            "subtext": "Há mais de 13 anos trazendo moda, conforto e estilo para os pés das mulheres. Calçados femininos das melhores marcas nacionais."
+          }
+        },
+        "bloco_atendimento": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Atendimento",
+            "menu": "atendimento-footer"
+          }
+        },
+        "bloco_institucional": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Institucional",
+            "menu": "institucional-footer"
+          }
+        },
+        "bloco_contato": {
+          "type": "text",
+          "settings": {
+            "heading": "Fale conosco",
+            "subtext": "WhatsApp: (37) 99999-9999\nSeg–Sex: 9h–18h | Sáb: 9h–13h\n\ncontato@evaglamour.com.br"
+          }
+        }
+      },
+      "block_order": ["bloco_sobre", "bloco_atendimento", "bloco_institucional", "bloco_contato"],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
         "newsletter_heading": "Receba nossas novidades",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
@@ -20,7 +51,5 @@
       }
     }
   },
-  "order": [
-    "footer"
-  ]
+  "order": ["footer"]
 }
