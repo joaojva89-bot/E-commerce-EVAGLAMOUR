@@ -1,0 +1,254 @@
+<style>
+  .eva-contato {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .eva-contato__inner {
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .eva-contato__title {
+    margin: 0 0 1.2rem;
+  }
+  .eva-contato__subtitle {
+    font-size: 1.5rem;
+    color: var(--color-foreground-secondary, #666);
+    margin: 0 0 3.2rem;
+    line-height: 1.6;
+  }
+  .eva-contato__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+  .eva-contato__card {
+    border: 1px solid var(--color-border, #e8e8e8);
+    border-radius: 0.8rem;
+    padding: 2.4rem 2rem;
+    text-align: left;
+  }
+  .eva-contato__card-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .eva-contato__card-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .eva-contato__card-icon--green { background: rgba(37,211,102,0.12); color: #1da851; }
+  .eva-contato__card-icon--blue  { background: rgba(0,119,181,0.10); color: #0077b5; }
+  .eva-contato__card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+  }
+  .eva-contato__card-desc {
+    font-size: 1.3rem;
+    color: var(--color-foreground-secondary, #666);
+    margin: 0 0 1.6rem;
+    line-height: 1.5;
+  }
+  .eva-contato__card-hours {
+    font-size: 1.2rem;
+    color: var(--color-foreground-secondary, #888);
+    margin: 0 0 1.6rem;
+  }
+  .eva-contato__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2rem;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .eva-contato__btn:hover { opacity: 0.85; }
+  .eva-contato__btn--green { background: #25D366; color: #fff; }
+  .eva-contato__btn--outline { background: transparent; border: 1.5px solid currentColor; color: var(--color-foreground); }
+  .eva-contato__btn svg { width: 1.8rem; height: 1.8rem; fill: currentColor; }
+  .eva-contato__faq-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 1.6rem;
+    text-align: left;
+  }
+  .eva-contato__faq {
+    text-align: left;
+  }
+  .eva-contato__faq details {
+    border-bottom: 1px solid var(--color-border, #e8e8e8);
+  }
+  .eva-contato__faq summary {
+    padding: 1.4rem 0;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 500;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .eva-contato__faq summary::-webkit-details-marker { display: none; }
+  .eva-contato__faq summary::after {
+    content: '+';
+    font-size: 2rem;
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .eva-contato__faq details[open] summary::after {
+    transform: rotate(45deg);
+  }
+  .eva-contato__faq-answer {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: var(--color-foreground-secondary, #555);
+    padding-bottom: 1.4rem;
+  }
+</style>
+
+<div class="eva-contato page-width">
+  <div class="eva-contato__inner">
+    <h1 class="eva-contato__title h2">{{ section.settings.title }}</h1>
+    <p class="eva-contato__subtitle">{{ section.settings.subtitle }}</p>
+
+    <div class="eva-contato__cards">
+      <div class="eva-contato__card">
+        <div class="eva-contato__card-icon eva-contato__card-icon--green">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <p class="eva-contato__card-title">WhatsApp</p>
+        <p class="eva-contato__card-desc">Atendimento rápido para dúvidas sobre pedidos, trocas e produtos.</p>
+        <p class="eva-contato__card-hours">Seg–Sex: 9h–18h | Sáb: 9h–13h</p>
+        <a class="eva-contato__btn eva-contato__btn--green" href="https://wa.me/{{ section.settings.whatsapp_number }}?text={{ section.settings.whatsapp_message | url_encode }}" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+
+      <div class="eva-contato__card">
+        <div class="eva-contato__card-icon eva-contato__card-icon--blue">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+        </div>
+        <p class="eva-contato__card-title">E-mail</p>
+        <p class="eva-contato__card-desc">Para assuntos que precisam de mais detalhes ou documentação.</p>
+        <p class="eva-contato__card-hours">Resposta em até 1 dia útil</p>
+        <a class="eva-contato__btn eva-contato__btn--outline" href="mailto:{{ section.settings.email }}">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="fill:none">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+          Enviar e-mail
+        </a>
+      </div>
+    </div>
+
+    {%- if section.settings.show_faq -%}
+    <div class="eva-contato__faq">
+      <h2 class="eva-contato__faq-title">Dúvidas frequentes</h2>
+      <details>
+        <summary>Qual o prazo de entrega?</summary>
+        <div class="eva-contato__faq-answer">O prazo varia conforme a sua região. Após a confirmação do pagamento, seu pedido é processado em até 1 dia útil. O frete é calculado no checkout.</div>
+      </details>
+      <details>
+        <summary>Como faço para trocar ou devolver um produto?</summary>
+        <div class="eva-contato__faq-answer">Você tem até 30 dias após o recebimento para solicitar troca ou devolução. Entre em contato pelo WhatsApp ou e-mail com o número do pedido e o motivo.</div>
+      </details>
+      <details>
+        <summary>Como sei qual é o meu número?</summary>
+        <div class="eva-contato__faq-answer">Consulte nosso guia de tamanhos na página do produto. Se ainda tiver dúvida, fale com a gente pelo WhatsApp — é só mandar a medida do seu pé em centímetros.</div>
+      </details>
+      <details>
+        <summary>Quais formas de pagamento são aceitas?</summary>
+        <div class="eva-contato__faq-answer">Aceitamos cartão de crédito (parcelado), boleto bancário e Pix. O Pix tem aprovação imediata e o boleto em até 3 dias úteis.</div>
+      </details>
+      <details>
+        <summary>Posso rastrear meu pedido?</summary>
+        <div class="eva-contato__faq-answer">Sim! Assim que seu pedido for despachado, você receberá um e-mail com o código de rastreio dos Correios ou da transportadora.</div>
+      </details>
+    </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contato e Ajuda",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Como podemos ajudar?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Escolha a melhor forma de entrar em contato com a gente."
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "Número WhatsApp (com DDI, sem +)",
+      "default": "5537999999999"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_message",
+      "label": "Mensagem padrão WhatsApp",
+      "default": "Olá! Vim pelo site da Eva Glamour e preciso de ajuda."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "E-mail de contato",
+      "default": "contato@evaglamour.com.br"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_faq",
+      "label": "Mostrar dúvidas frequentes",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 52,
+      "label": "Espaçamento superior"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 52,
+      "label": "Espaçamento inferior"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contato e Ajuda"
+    }
+  ]
+}
+{% endschema %}
