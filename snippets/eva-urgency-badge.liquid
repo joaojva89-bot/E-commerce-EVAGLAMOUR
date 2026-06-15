@@ -1,0 +1,49 @@
+{%- assign variant = product.selected_or_first_available_variant -%}
+{%- if variant.inventory_management == 'shopify' and variant.inventory_quantity > 0 and variant.inventory_quantity <= 5 -%}
+  <div class="eva-urgency-badge">
+    <span class="eva-urgency-badge__dot"></span>
+    <span>
+      {%- if variant.inventory_quantity == 1 -%}
+        Último par disponível!
+      {%- else -%}
+        Restam apenas {{ variant.inventory_quantity }} pares!
+      {%- endif -%}
+    </span>
+  </div>
+{%- elsif variant.inventory_management == 'shopify' and variant.inventory_quantity > 5 and variant.inventory_quantity <= 15 -%}
+  <div class="eva-urgency-badge eva-urgency-badge--moderate">
+    <span class="eva-urgency-badge__dot"></span>
+    <span>Poucas unidades em estoque</span>
+  </div>
+{%- endif -%}
+
+<style>
+  .eva-urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #c0392b;
+    padding: 0.6rem 1rem;
+    background: rgba(192, 57, 43, 0.08);
+    border-radius: 0.3rem;
+    margin: 0.8rem 0;
+  }
+  .eva-urgency-badge--moderate {
+    color: #e67e22;
+    background: rgba(230, 126, 34, 0.08);
+  }
+  .eva-urgency-badge__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+    animation: eva-pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes eva-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+</style>
