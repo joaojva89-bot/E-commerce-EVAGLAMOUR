@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "contato": {
+      "type": "eva-contato-whatsapp",
+      "settings": {
+        "title": "Como podemos ajudar?",
+        "subtitle": "Escolha a melhor forma de entrar em contato com a gente.",
+        "whatsapp_number": "5537999999999",
+        "whatsapp_message": "Olá! Vim pelo site da Eva Glamour e preciso de ajuda.",
+        "email": "contato@evaglamour.com.br",
+        "show_faq": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": ["contato"]
+}
