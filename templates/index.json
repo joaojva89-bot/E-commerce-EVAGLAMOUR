@@ -12,7 +12,7 @@
     "eva_hero": {
       "type": "eva-hero-carousel",
       "settings": {
-        "s1_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05_1.jpg",
+        "s1_image": "shopify:\/\/shop_images\/WhatsApp_Image_2026-05-22_at_11.27.05_1.jpg",
         "s1_eyebrow": "Aniversario Eva Glamour",
         "s1_hl1": "Treze",
         "s1_hl2": "anos de",
@@ -22,11 +22,11 @@
         "s1_date_label": "de maio",
         "s1_sub": "Celebramos cada mulher que caminhou com a gente.",
         "s1_cta1": "Aproveitar agora",
-        "s1_cta1_url": "/collections/novidades",
+        "s1_cta1_url": "\/collections\/novidades",
         "s1_cta2": "Ver regulamento",
-        "s1_cta2_url": "/pages/regulamento",
+        "s1_cta2_url": "\/pages\/regulamento",
         "s1_dot": "Aniversario",
-        "s2_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05.jpg",
+        "s2_image": "shopify:\/\/shop_images\/WhatsApp_Image_2026-05-22_at_11.27.05.jpg",
         "s2_eyebrow": "Colecao em destaque",
         "s2_brand": "VIZZANO",
         "s2_hl1": "Brilho que",
@@ -36,18 +36,18 @@
         "s2_pill": "Lancamento",
         "s2_meta": "+42 modelos disponiveis",
         "s2_cta1": "Comprar colecao",
-        "s2_cta1_url": "/collections/vizzano",
+        "s2_cta1_url": "\/collections\/vizzano",
         "s2_cta2": "Explorar marca",
-        "s2_cta2_url": "/collections/vizzano",
+        "s2_cta2_url": "\/collections\/vizzano",
         "s2_dot": "Vizzano",
-        "s3_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05_3.jpg",
+        "s3_image": "shopify:\/\/shop_images\/WhatsApp_Image_2026-05-22_at_11.27.05_3.jpg",
         "s3_eyebrow": "Eva Glamour apresenta",
         "s3_brand": "modare",
         "s3_sub": "ultraconforto",
         "s3_cta": "Conheca a nova colecao",
-        "s3_cta_url": "/collections/modare",
+        "s3_cta_url": "\/collections\/modare",
         "s3_dot": "Modare",
-        "s4_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05_2.jpg",
+        "s4_image": "shopify:\/\/shop_images\/WhatsApp_Image_2026-05-22_at_11.27.05_2.jpg",
         "s4_eyebrow": "Classicos do verao",
         "s4_brand": "BEIRA RIO",
         "s4_hl1": "Versateis,",
@@ -59,9 +59,9 @@
         "s4_cents": "90",
         "s4_install": "ou 6x de R$ 21,65 sem juros",
         "s4_cta1": "Comprar agora",
-        "s4_cta1_url": "/collections/beira-rio",
+        "s4_cta1_url": "\/collections\/beira-rio",
         "s4_cta2": "Ver colecao",
-        "s4_cta2_url": "/collections/beira-rio",
+        "s4_cta2_url": "\/collections\/beira-rio",
         "s4_dot": "Beira Rio",
         "f1_title": "Frete Gratis",
         "f1_sub": "Acima de R$ 150 GO e DF",
@@ -111,95 +111,62 @@
     "collection_list": {
       "type": "collection-list",
       "blocks": {
-        "c5": {
+        "featured_collection_3MkBCT": {
           "type": "featured_collection",
-          "settings": {
-            "collection": "papetes"
-          }
+          "settings": { "collection": "rasteiras" }
         },
         "c1": {
           "type": "featured_collection",
-          "settings": {
-            "collection": "saltos"
-          }
+          "settings": { "collection": "saltos" }
         },
-        "featured_collection_gA8PWh": {
+        "c2": {
           "type": "featured_collection",
-          "settings": {
-            "collection": "tenis-casuais"
-          }
+          "settings": { "collection": "sandalias" }
         },
-        "featured_collection_3MkBCT": {
+        "c3": {
           "type": "featured_collection",
-          "settings": {
-            "collection": "rasteiras"
-          }
+          "settings": { "collection": "tenis" }
+        },
+        "c5": {
+          "type": "featured_collection",
+          "settings": { "collection": "papetes" }
         }
       },
-      "block_order": [
-        "c5",
-        "c1",
-        "featured_collection_gA8PWh",
-        "featured_collection_3MkBCT"
-      ],
+      "block_order": ["featured_collection_3MkBCT", "c1", "c2", "c3", "c5"],
       "settings": {
-        "title": "POR MODELO",
+        "title": "Comprar por Modelo",
         "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "color_scheme": "scheme-2",
         "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "collection_list_FRmQQK": {
+    "collection_list_marcas": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_ymcQBg": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bolsas"
-          }
-        },
-        "featured_collection_EFWRHB": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "botas"
-          }
-        },
-        "featured_collection_9d7zib": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "esportivos"
-          }
-        },
-        "featured_collection_D7cyQw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "infantil"
-          }
-        }
+        "m1": { "type": "featured_collection", "settings": { "collection": "vizzano" } },
+        "m2": { "type": "featured_collection", "settings": { "collection": "modare" } },
+        "m3": { "type": "featured_collection", "settings": { "collection": "beira-rio" } },
+        "m4": { "type": "featured_collection", "settings": { "collection": "moleca" } },
+        "m5": { "type": "featured_collection", "settings": { "collection": "actvitta" } }
       },
-      "block_order": [
-        "featured_collection_ymcQBg",
-        "featured_collection_EFWRHB",
-        "featured_collection_9d7zib",
-        "featured_collection_D7cyQw"
-      ],
+      "block_order": ["m1", "m2", "m3", "m4", "m5"],
       "settings": {
-        "title": "",
+        "title": "Comprar por Marca",
         "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 4,
-        "color_scheme": "scheme-2",
-        "show_view_all": true,
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 20,
-        "padding_bottom": 32
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "diferenciais": {
@@ -238,16 +205,11 @@
             "title": "Atendimento WhatsApp",
             "text": "<p>Atendimento rapido pelo WhatsApp</p>",
             "link_label": "Falar agora",
-            "link": "https://wa.me/5561991929550"
+            "link": "https:\/\/wa.me\/5561991929550"
           }
         }
       },
-      "block_order": [
-        "d1",
-        "d2",
-        "d3",
-        "d4"
-      ],
+      "block_order": ["d1", "d2", "d3", "d4"],
       "settings": {
         "title": "Por que a Eva Glamour?",
         "heading_size": "h2",
@@ -293,11 +255,7 @@
           }
         }
       },
-      "block_order": [
-        "d1",
-        "d2",
-        "d3"
-      ],
+      "block_order": ["d1", "d2", "d3"],
       "settings": {
         "title": "O que nossas clientes dizem",
         "subtitle": "Mais de 13 anos de clientes satisfeitas",
@@ -306,13 +264,5 @@
       }
     }
   },
-  "order": [
-    "eva_hero",
-    "eva_brand_marquee_MzefRD",
-    "featured_collection",
-    "collection_list",
-    "collection_list_FRmQQK",
-    "diferenciais",
-    "depoimentos"
-  ]
+  "order": ["eva_hero", "eva_brand_marquee_MzefRD", "featured_collection", "collection_list", "collection_list_marcas", "diferenciais", "depoimentos"]
 }
