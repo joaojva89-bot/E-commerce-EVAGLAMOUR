@@ -489,6 +489,8 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+              {%- when 'trust' -%}
+                {%- render 'eva-product-trust', product: product -%}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -754,6 +756,11 @@
     {
       "type": "sizeguide",
       "name": "Guia de tamanhos",
+      "limit": 1
+    },
+    {
+      "type": "trust",
+      "name": "Selos de confiança + WhatsApp",
       "limit": 1
     },
     {

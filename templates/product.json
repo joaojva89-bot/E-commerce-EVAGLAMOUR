@@ -11,10 +11,11 @@
         "sizeguide": { "type": "sizeguide", "settings": {} },
         "quantity_selector": { "type": "quantity_selector", "settings": {} },
         "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
+        "trust": { "type": "trust", "settings": {} },
         "description": { "type": "description", "settings": {} },
         "share": { "type": "share", "settings": { "share_label": "Compartilhar" } }
       },
-      "block_order": ["vendor", "title", "price", "urgency", "variant_picker", "sizeguide", "quantity_selector", "buy_buttons", "description", "share"],
+      "block_order": ["vendor", "title", "price", "urgency", "variant_picker", "sizeguide", "quantity_selector", "buy_buttons", "trust", "description", "share"],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",

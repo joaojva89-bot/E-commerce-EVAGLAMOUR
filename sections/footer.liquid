@@ -250,6 +250,8 @@
     {%- endunless -%}
   {%- endif -%}
 
+  {%- render 'eva-footer-trust' -%}
+
   <div
     class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}

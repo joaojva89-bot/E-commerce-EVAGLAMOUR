@@ -1,0 +1,101 @@
+<div class="eva-footer-trust">
+  <div class="eva-footer-trust__inner page-width">
+    <div class="eva-footer-trust__badges">
+      <div class="eva-footer-trust__badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Compra 100% Segura</span>
+      </div>
+      <div class="eva-footer-trust__badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+        <span>Troca em até 30 dias</span>
+      </div>
+      <div class="eva-footer-trust__badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Entrega para todo o Brasil</span>
+      </div>
+      <div class="eva-footer-trust__badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <span>Parcelamento em até 10x</span>
+      </div>
+      <div class="eva-footer-trust__badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+        <span>Atendimento pelo WhatsApp</span>
+      </div>
+    </div>
+
+    <div class="eva-footer-trust__bottom">
+      <p class="eva-footer-trust__lgpd">
+        🔒 Seus dados estão protegidos de acordo com a <a href="/pages/privacidade">Lei Geral de Proteção de Dados (LGPD)</a>. Não compartilhamos suas informações com terceiros.
+      </p>
+      <p class="eva-footer-trust__cnpj">
+        EVA Glamour — Comércio de Calçados Femininos &nbsp;|&nbsp; CNPJ: XX.XXX.XXX/XXXX-XX &nbsp;|&nbsp; Águas Lindas de Goiás / GO
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .eva-footer-trust {
+    background: rgba(var(--color-foreground-rgb, 0,0,0), 0.03);
+    border-top: 1px solid rgba(var(--color-foreground-rgb, 0,0,0), 0.08);
+    padding: 2.4rem 0;
+  }
+  .eva-footer-trust__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .eva-footer-trust__badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem 3.2rem;
+  }
+  .eva-footer-trust__badge {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-foreground);
+    opacity: 0.7;
+  }
+  .eva-footer-trust__badge svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .eva-footer-trust__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: center;
+  }
+  .eva-footer-trust__lgpd {
+    font-size: 1.1rem;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    line-height: 1.5;
+    max-width: 64rem;
+  }
+  .eva-footer-trust__lgpd a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .eva-footer-trust__cnpj {
+    font-size: 1.1rem;
+    color: var(--color-foreground);
+    opacity: 0.4;
+    line-height: 1.5;
+  }
+  @media (max-width: 749px) {
+    .eva-footer-trust__badges {
+      gap: 1.2rem 2rem;
+    }
+    .eva-footer-trust__badge {
+      font-size: 1.1rem;
+    }
+  }
+</style>
