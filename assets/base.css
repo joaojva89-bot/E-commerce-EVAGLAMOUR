@@ -3596,5 +3596,6 @@ details-disclosure > details {
   }
 }
 
-/* EVA — centralizar títulos nas coleções de marca e modelo */
+/* EVA — centralizar títulos e remover setas nas coleções de marca e modelo */
 .collection-list .card__information { text-align: center; }
+.collection-list .card__information .icon-wrap { display: none; }
