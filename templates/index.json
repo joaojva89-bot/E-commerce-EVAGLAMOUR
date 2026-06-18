@@ -80,30 +80,101 @@
         "label": "Nossas Marcas"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "collection_list_RjRNep": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_iAWmcr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_hHm8rP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_9Rai7n": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_iAWmcr",
+        "featured_collection_hHm8rP",
+        "featured_collection_9Rai7n"
+      ],
+      "name": "t:sections.collection-list.presets.name",
       "settings": {
-        "collection": "novidades",
-        "products_to_show": 8,
-        "title": "Novidades",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "title": "COLEÇÃO JUNINA",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_wepnkm": {
+      "type": "featured-product",
+      "blocks": {
+        "text_UDtPLf": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_LE7E8t": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_Y9btdj": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_bqn8Qc": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_HkPezz": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "text_UDtPLf",
+        "title_LE7E8t",
+        "price_Y9btdj",
+        "variant_picker_bqn8Qc",
+        "buy_buttons_HkPezz"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "bota-feminina-napa-cano-alto-com-salto-marron-9076-113",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -363,7 +434,8 @@
   "order": [
     "eva_hero",
     "eva_brand_marquee_MzefRD",
-    "featured_collection",
+    "collection_list_RjRNep",
+    "featured_product_wepnkm",
     "collection_list",
     "collection_list_novas",
     "collection_list_marcas",
