@@ -66,15 +66,8 @@
 
 <div
   class="color-{{ section.settings.color_scheme }} isolate gradient"
+  {% if section.settings.collection.handle == 'junina' %}style="background-image: url('https://cdn.shopify.com/s/files/1/0828/4304/2040/files/banderolas-festa-junina.png?v=1781800660'); background-repeat: repeat-x; background-position: top center; background-size: auto 140px;"{% endif %}
 >
-  {%- if section.settings.collection.handle == 'junina' -%}
-    <img
-      src="https://cdn.shopify.com/s/files/1/0828/4304/2040/files/banderolas-festa-junina.png?v=1781800660"
-      alt=""
-      aria-hidden="true"
-      style="display:block;width:100%;height:auto;max-height:110px;object-fit:cover;object-position:top;pointer-events:none;"
-    >
-  {%- endif -%}
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
     id="collection-{{ section.id }}"
