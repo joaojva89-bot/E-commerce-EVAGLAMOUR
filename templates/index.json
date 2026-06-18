@@ -91,7 +91,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 4,
+        "columns_desktop": 6,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
@@ -244,6 +244,93 @@
         "color_scheme": "scheme-2",
         "secondary_background": false,
         "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "featured_collection_jam4n8": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "esportivos",
+        "products_to_show": 10,
+        "title": "ESPORTIVOS",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 6,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-4",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "featured_product_HfbPHR": {
+      "type": "featured-product",
+      "blocks": {
+        "text_YU4zpm": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_hGRFxB": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_jQNahz": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_MLjDyG": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_UchRdd": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "text_YU4zpm",
+        "title_hGRFxB",
+        "price_jQNahz",
+        "variant_picker_MLjDyG",
+        "buy_buttons_UchRdd"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "tenis-casual-preto-com-rosa-4841-115",
+        "color_scheme": "scheme-4",
+        "secondary_background": false,
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "media_position": "left",
@@ -513,6 +600,8 @@
     "featured_product_wepnkm",
     "featured_collection_4jCUfX",
     "featured_product_HBMJmb",
+    "featured_collection_jam4n8",
+    "featured_product_HfbPHR",
     "collection_list",
     "collection_list_novas",
     "collection_list_marcas",
