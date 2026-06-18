@@ -3596,6 +3596,14 @@ details-disclosure > details {
   }
 }
 
+/* EVA — banderolas Coleção Junina */
+#shopify-section-featured_collection_HnM8Qj {
+  background-image: url('https://cdn.shopify.com/s/files/1/0828/4304/2040/files/banderolas-festa-junina.png?v=1781800660');
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-size: auto 120px;
+}
+
 /* EVA — centralizar títulos e remover setas nas coleções de marca e modelo */
 .collection-list .card__information { text-align: center; }
 .collection-list .card__information .icon-wrap { display: none; }
