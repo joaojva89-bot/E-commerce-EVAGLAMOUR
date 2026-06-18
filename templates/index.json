@@ -80,42 +80,30 @@
         "label": "Nossas Marcas"
       }
     },
-    "collection_list_RjRNep": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_iAWmcr": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_hHm8rP": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_9Rai7n": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_iAWmcr",
-        "featured_collection_hHm8rP",
-        "featured_collection_9Rai7n"
-      ],
-      "name": "t:sections.collection-list.presets.name",
+    "featured_collection_HnM8Qj": {
+      "type": "featured-collection",
+      "name": "COLEÇÃO JUNINA",
       "settings": {
+        "collection": "junina",
+        "products_to_show": 4,
         "title": "COLEÇÃO JUNINA",
         "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
         "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
@@ -434,7 +422,7 @@
   "order": [
     "eva_hero",
     "eva_brand_marquee_MzefRD",
-    "collection_list_RjRNep",
+    "featured_collection_HnM8Qj",
     "featured_product_wepnkm",
     "collection_list",
     "collection_list_novas",
