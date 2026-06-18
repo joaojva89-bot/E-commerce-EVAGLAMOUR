@@ -111,6 +111,18 @@
     "collection_list": {
       "type": "collection-list",
       "blocks": {
+        "c5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "papetes"
+          }
+        },
+        "featured_collection_gjhAbC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tenis-casuais"
+          }
+        },
         "featured_collection_3MkBCT": {
           "type": "featured_collection",
           "settings": {
@@ -122,38 +134,19 @@
           "settings": {
             "collection": "saltos"
           }
-        },
-        "c2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "sandalias"
-          }
-        },
-        "c3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "tenis"
-          }
-        },
-        "c5": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "papetes"
-          }
         }
       },
       "block_order": [
+        "c5",
+        "featured_collection_gjhAbC",
         "featured_collection_3MkBCT",
-        "c1",
-        "c2",
-        "c3",
-        "c5"
+        "c1"
       ],
       "settings": {
         "title": "Comprar por Modelo",
         "heading_size": "h2",
         "image_ratio": "square",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "color_scheme": "scheme-2",
         "show_view_all": false,
         "columns_mobile": "2",
