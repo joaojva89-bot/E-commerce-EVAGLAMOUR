@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -7,23 +16,20 @@
       "blocks": {
         "bloco_sobre": {
           "type": "brand_information",
-          "settings": {
-            "heading": "",
-            "subtext": "<p>Há mais de 13 anos trazendo moda, conforto e estilo para os pés das mulheres. Calçados femininos das melhores marcas nacionais.</p>"
-          }
+          "settings": {}
         },
         "bloco_atendimento": {
           "type": "link_list",
           "settings": {
             "heading": "Atendimento",
-            "menu": "atendimento-footer"
+            "menu": "atendimento"
           }
         },
         "bloco_institucional": {
           "type": "link_list",
           "settings": {
             "heading": "Institucional",
-            "menu": "institucional-footer"
+            "menu": "institucional"
           }
         },
         "bloco_contato": {
@@ -34,7 +40,12 @@
           }
         }
       },
-      "block_order": ["bloco_sobre", "bloco_atendimento", "bloco_institucional", "bloco_contato"],
+      "block_order": [
+        "bloco_sobre",
+        "bloco_atendimento",
+        "bloco_institucional",
+        "bloco_contato"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -51,5 +62,7 @@
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }
