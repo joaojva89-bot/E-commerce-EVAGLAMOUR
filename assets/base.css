@@ -3600,4 +3600,4 @@ details-disclosure > details {
 .collection-list .card__information { text-align: center; }
 .collection-list .card__information .icon-wrap { display: none; }
 .collection-list-wrapper .title-wrapper-with-link { justify-content: center; }
-.collection__title { justify-content: center; }
+.collection__title { display: flex; justify-content: center; }
