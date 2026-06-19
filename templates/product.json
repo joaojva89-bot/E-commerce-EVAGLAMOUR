@@ -12,19 +12,75 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "text", "settings": { "text": "{{ product.vendor }}", "text_style": "uppercase" } },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "urgency": { "type": "urgency", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "sizeguide": { "type": "sizeguide", "settings": {} },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
-        "trust": { "type": "trust", "settings": {} },
-        "description": { "type": "description", "settings": {} },
-        "share": { "type": "share", "settings": { "share_label": "Compartilhar" } }
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "urgency": {
+          "type": "urgency",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "sizeguide": {
+          "type": "sizeguide",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "trust": {
+          "type": "trust",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartilhar"
+          }
+        }
       },
-      "block_order": ["vendor", "title", "price", "urgency", "variant_picker", "sizeguide", "quantity_selector", "buy_buttons", "trust", "description", "share"],
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "urgency",
+        "variant_picker",
+        "sizeguide",
+        "quantity_selector",
+        "buy_buttons",
+        "trust",
+        "description",
+        "share"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
@@ -58,7 +114,31 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "178189964037a0c273": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_mkPJ4Q": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_mkPJ4Q"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
-  "order": ["main", "related-products"]
+  "order": [
+    "main",
+    "related-products",
+    "178189964037a0c273"
+  ]
 }
