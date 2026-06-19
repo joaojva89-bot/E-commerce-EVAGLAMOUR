@@ -66,6 +66,10 @@
           "settings": {
             "share_label": "Compartilhar"
           }
+        },
+        "judge_me_reviews_preview_badge_Bp4GLw": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
@@ -79,7 +83,8 @@
         "buy_buttons",
         "trust",
         "description",
-        "share"
+        "share",
+        "judge_me_reviews_preview_badge_Bp4GLw"
       ],
       "settings": {
         "enable_sticky_info": true,
