@@ -3,16 +3,16 @@
 .eva-carousel-wrap{position:relative;width:100%;overflow:hidden}
 .eva-carousel{position:relative;width:100%}
 .eva-track{display:flex;transition:transform .9s cubic-bezier(.7,0,.2,1)}
-.eva-slide{min-width:100%;position:relative;flex-shrink:0}
+.eva-slide{min-width:100%;position:relative;flex-shrink:0;overflow:hidden}
 .eva-slide-link{display:block;width:100%;line-height:0}
-.eva-slide-img{width:100%;height:auto;display:block}
+.eva-slide-img{width:100%;display:block;aspect-ratio:1774/887;object-fit:cover;object-position:center}
+.eva-slide-img--mobile{display:none;aspect-ratio:1086/1448}
 .eva-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.18);border:none;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#fff}
 .eva-nav:hover{background:rgba(255,255,255,.35)}
 .eva-nav--prev{left:16px}.eva-nav--next{right:16px}
 .eva-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
 .eva-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);border:none;cursor:pointer;padding:0;transition:background .2s}
 .eva-dot.active{background:#fff}
-.eva-slide-img--mobile{display:none}
 @media(max-width:767px){.eva-slide-img--desktop{display:none}.eva-slide-img--mobile{display:block}.eva-nav{display:none}}
 </style>
 
@@ -27,22 +27,10 @@
             {%- assign link = block.settings.button_link | default: '/collections/botas' -%}
             <a href="{{ link }}" class="eva-slide-link" aria-label="{{ block.settings.button_label | default: 'Confira a colecao' }}">
               {%- if dimg != blank -%}
-                <img
-                  src="{{ dimg | image_url: width: 1920 }}"
-                  srcset="{{ dimg | image_url: width: 800 }} 800w, {{ dimg | image_url: width: 1200 }} 1200w, {{ dimg | image_url: width: 1920 }} 1920w"
-                  sizes="100vw"
-                  alt="{{ dimg.alt | default: '' }}"
-                  class="eva-slide-img eva-slide-img--desktop"
-                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+                <img src="{{ dimg | image_url: width: 1920 }}" srcset="{{ dimg | image_url: width: 800 }} 800w, {{ dimg | image_url: width: 1200 }} 1200w, {{ dimg | image_url: width: 1920 }} 1920w" sizes="100vw" alt="{{ dimg.alt | default: '' }}" class="eva-slide-img eva-slide-img--desktop" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
               {%- endif -%}
               {%- if mimg != blank -%}
-                <img
-                  src="{{ mimg | image_url: width: 800 }}"
-                  srcset="{{ mimg | image_url: width: 600 }} 600w, {{ mimg | image_url: width: 800 }} 800w"
-                  sizes="100vw"
-                  alt="{{ mimg.alt | default: '' }}"
-                  class="eva-slide-img eva-slide-img--mobile"
-                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+                <img src="{{ mimg | image_url: width: 800 }}" srcset="{{ mimg | image_url: width: 600 }} 600w, {{ mimg | image_url: width: 800 }} 800w" sizes="100vw" alt="{{ mimg.alt | default: '' }}" class="eva-slide-img eva-slide-img--mobile" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
               {%- endif -%}
             </a>
           </div>
@@ -88,27 +76,10 @@
       "type": "slide",
       "name": "Slide",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "desktop_image",
-          "label": "Imagem Desktop"
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_image",
-          "label": "Imagem Mobile"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Texto do botao",
-          "default": "Confira a nova colecao"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Link do botao"
-        }
+        {"type": "image_picker", "id": "desktop_image", "label": "Imagem Desktop"},
+        {"type": "image_picker", "id": "mobile_image", "label": "Imagem Mobile"},
+        {"type": "text", "id": "button_label", "label": "Texto do botao", "default": "Confira a nova colecao"},
+        {"type": "url", "id": "button_link", "label": "Link do botao"}
       ]
     }
   ],
