@@ -18,7 +18,7 @@
             "desktop_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_44_31.jpg",
             "mobile_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_51_23.jpg",
             "button_label": "Confira a nova colecao",
-            "button_link": "/collections/botas"
+            "button_link": "shopify://collections/junina"
           }
         },
         "slide2": {
@@ -27,7 +27,7 @@
             "desktop_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_44_39.jpg",
             "mobile_image": "shopify://shop_images/Jun_20_2026_09_56_27_AM.jpg",
             "button_label": "Confira a nova colecao",
-            "button_link": "/collections/botas"
+            "button_link": "shopify://collections/junina"
           }
         },
         "slide3": {
@@ -36,7 +36,7 @@
             "desktop_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_44_51.jpg",
             "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_20_2026_09_58_16_AM.jpg",
             "button_label": "Confira a nova colecao",
-            "button_link": "/collections/botas"
+            "button_link": "shopify://collections/junina"
           }
         }
       },
