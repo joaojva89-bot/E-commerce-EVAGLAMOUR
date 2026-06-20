@@ -11,67 +11,41 @@
   "sections": {
     "eva_hero": {
       "type": "eva-hero-carousel",
-      "settings": {
-        "s1_image": "shopify://shop_images/Jun_20_2026_09_56_27_AM.jpg",
-        "s1_eyebrow": "Festa Junina 2026",
-        "s1_hl1": "Para as",
-        "s1_hl2": "cowgirl de",
-        "s1_hl_em": "todo o Brasil!",
-        "s1_date1": "",
-        "s1_date2": "",
-        "s1_date_label": "",
-        "s1_sub": "Botas com franjas e atitude para arrasar no arraiá.",
-        "s1_cta1": "Confira a Coleção",
-        "s1_cta1_url": "/collections/botas",
-        "s1_cta2": "",
-        "s1_cta2_url": "",
-        "s1_dot": "Festa Junina",
-        "s2_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05.jpg",
-        "s2_eyebrow": "Colecao em destaque",
-        "s2_brand": "VIZZANO",
-        "s2_hl1": "Brilho que",
-        "s2_hl2": "conversa com",
-        "s2_hl_em": "seu estilo.",
-        "s2_sub": "Tachas e correntes douradas em palmilhas anatomicas.",
-        "s2_pill": "Lancamento",
-        "s2_meta": "+42 modelos disponiveis",
-        "s2_cta1": "Comprar colecao",
-        "s2_cta1_url": "/collections/vizzano",
-        "s2_cta2": "Explorar marca",
-        "s2_cta2_url": "/collections/vizzano",
-        "s2_dot": "Vizzano",
-        "s3_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05_3.jpg",
-        "s3_eyebrow": "Eva Glamour apresenta",
-        "s3_brand": "modare",
-        "s3_sub": "ultraconforto",
-        "s3_cta": "Conheca a nova colecao",
-        "s3_cta_url": "/collections/modare",
-        "s3_dot": "Modare",
-        "s4_image": "shopify://shop_images/WhatsApp_Image_2026-05-22_at_11.27.05_2.jpg",
-        "s4_eyebrow": "Classicos do verao",
-        "s4_brand": "BEIRA RIO",
-        "s4_hl1": "Versateis,",
-        "s4_hl2": "femininas e",
-        "s4_hl_em": "atemporais.",
-        "s4_sub": "Detalhes em ferragens douradas.",
-        "s4_price_from": "A partir de",
-        "s4_price": "129",
-        "s4_cents": "90",
-        "s4_install": "ou 6x de R$ 21,65 sem juros",
-        "s4_cta1": "Comprar agora",
-        "s4_cta1_url": "/collections/beira-rio",
-        "s4_cta2": "Ver colecao",
-        "s4_cta2_url": "/collections/beira-rio",
-        "s4_dot": "Beira Rio",
-        "f1_title": "Frete Gratis",
-        "f1_sub": "Acima de R$ 150 GO e DF",
-        "f2_title": "Ate 10x sem juros",
-        "f2_sub": "Em todas as marcas",
-        "f3_title": "Troca Garantida",
-        "f3_sub": "Ate 30 dias",
-        "f4_title": "Atendimento",
-        "f4_sub": "WhatsApp ao vivo"
-      }
+      "blocks": {
+        "slide1": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_44_31.jpg",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_51_23.jpg",
+            "button_label": "Confira a nova colecao",
+            "button_link": "/collections/botas"
+          }
+        },
+        "slide2": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_44_39.jpg",
+            "mobile_image": "shopify://shop_images/Jun_20_2026_09_56_27_AM.jpg",
+            "button_label": "Confira a nova colecao",
+            "button_link": "/collections/botas"
+          }
+        },
+        "slide3": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/ChatGPT_Image_20_de_jun._de_2026_09_44_51.jpg",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_Jun_20_2026_09_58_16_AM.jpg",
+            "button_label": "Confira a nova colecao",
+            "button_link": "/collections/botas"
+          }
+        }
+      },
+      "block_order": [
+        "slide1",
+        "slide2",
+        "slide3"
+      ],
+      "settings": {}
     },
     "eva_brand_marquee_MzefRD": {
       "type": "eva-brand-marquee",
