@@ -3,17 +3,17 @@
 .eva-carousel-wrap{position:relative;width:100%;overflow:hidden}
 .eva-carousel{position:relative;width:100%}
 .eva-track{display:flex;transition:transform .9s cubic-bezier(.7,0,.2,1)}
-.eva-slide{min-width:100%;position:relative;flex-shrink:0;overflow:hidden}
-.eva-slide-link{display:block;width:100%;line-height:0}
-.eva-slide-img{width:100%;display:block;aspect-ratio:1774/887;object-fit:cover;object-position:center}
-.eva-slide-img--mobile{display:none;aspect-ratio:1086/1448}
+.eva-slide{min-width:100%;position:relative;flex-shrink:0;overflow:hidden;background:#0d0408}
+.eva-slide-link{display:block;width:100%;line-height:0;aspect-ratio:1774/887}
+.eva-slide-img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+.eva-slide-img--mobile{display:none}
 .eva-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.18);border:none;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#fff}
 .eva-nav:hover{background:rgba(255,255,255,.35)}
 .eva-nav--prev{left:16px}.eva-nav--next{right:16px}
 .eva-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
 .eva-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);border:none;cursor:pointer;padding:0;transition:background .2s}
 .eva-dot.active{background:#fff}
-@media(max-width:767px){.eva-slide-img--desktop{display:none}.eva-slide-img--mobile{display:block}.eva-nav{display:none}}
+@media(max-width:767px){.eva-slide-img--desktop{display:none}.eva-slide-img--mobile{display:block;object-fit:contain}.eva-slide-link{aspect-ratio:1086/1448}.eva-nav{display:none}}
 </style>
 
 <div class="eva-carousel-wrap" id="evc-{{ section.id }}">
