@@ -1,12 +1,12 @@
 {%- comment -%}Eva Glamour Hero Carousel{%- endcomment -%}
 <style>
 .eva-carousel-wrap{position:relative;width:100%;overflow:hidden}
-.eva-carousel{position:relative;width:100%;aspect-ratio:16/5.5;overflow:hidden;background:#1a0a10}
-.eva-track{display:flex;height:100%;transition:transform .9s cubic-bezier(.7,0,.2,1)}
-.eva-slide{min-width:100%;height:100%;position:relative;overflow:hidden;flex-shrink:0}
-.eva-slide picture{width:100%;height:100%;display:block}
-.eva-slide-img{width:100%;height:100%;object-fit:cover;display:block}
-.eva-slide-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:7%;z-index:2}
+.eva-carousel{position:relative;width:100%;overflow:hidden;background:#1a0a10}
+.eva-carousel::before{content:'';display:block;padding-top:34.375%}
+.eva-track{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+.eva-slide{position:relative;min-width:100%;height:100%;overflow:hidden;flex-shrink:0}
+.eva-slide-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
+.eva-slide-overlay{position:absolute;left:0;right:0;bottom:7%;display:flex;align-items:center;justify-content:center;z-index:2}
 .eva-fj-cta{display:inline-flex;align-items:center;padding:14px 36px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;text-decoration:none;background:#c4357a;color:#fdf0f5;border:1px solid #c4357a;transition:background .2s,border-color .2s;font-family:Inter,sans-serif}
 .eva-fj-cta:hover{background:#7b2d3e;border-color:#7b2d3e;color:#fdf0f5}
 .eva-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.18);border:none;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#fff}
@@ -15,7 +15,7 @@
 .eva-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
 .eva-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);border:none;cursor:pointer;padding:0;transition:background .2s}
 .eva-dot.active{background:#fff}
-@media(max-width:767px){.eva-carousel{aspect-ratio:3/4}.eva-nav{display:none}}
+@media(max-width:767px){.eva-carousel::before{padding-top:133%}.eva-nav{display:none}}
 </style>
 
 <div class="eva-carousel-wrap" id="evc-{{ section.id }}">
@@ -27,10 +27,28 @@
             {%- assign dimg = block.settings.desktop_image -%}
             {%- assign mimg = block.settings.mobile_image -%}
             {%- if dimg != blank -%}
-              <picture>
-                {%- if mimg != blank -%}<source media="(max-width:767px)" srcset="{{ mimg | image_url: width: 800 }} 800w, {{ mimg | image_url: width: 1000 }} 1000w">{%- endif -%}
-                <img src="{{ dimg | image_url: width: 1920 }}" srcset="{{ dimg | image_url: width: 800 }} 800w, {{ dimg | image_url: width: 1200 }} 1200w, {{ dimg | image_url: width: 1920 }} 1920w" sizes="100vw" alt="{{ dimg.alt | default: '' }}" class="eva-slide-img" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
-              </picture>
+              {%- if mimg != blank -%}
+                <img
+                  src="{{ dimg | image_url: width: 1920 }}"
+                  srcset="{{ dimg | image_url: width: 800 }} 800w, {{ dimg | image_url: width: 1200 }} 1200w, {{ dimg | image_url: width: 1920 }} 1920w"
+                  sizes="(max-width:767px) 100vw, 100vw"
+                  alt="{{ dimg.alt | default: '' }}"
+                  class="eva-slide-img eva-slide-img--desktop"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+                <img
+                  src="{{ mimg | image_url: width: 800 }}"
+                  alt="{{ mimg.alt | default: '' }}"
+                  class="eva-slide-img eva-slide-img--mobile"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+              {%- else -%}
+                <img
+                  src="{{ dimg | image_url: width: 1920 }}"
+                  srcset="{{ dimg | image_url: width: 800 }} 800w, {{ dimg | image_url: width: 1200 }} 1200w, {{ dimg | image_url: width: 1920 }} 1920w"
+                  sizes="100vw"
+                  alt="{{ dimg.alt | default: '' }}"
+                  class="eva-slide-img"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+              {%- endif -%}
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
               <div class="eva-slide-overlay">
@@ -55,6 +73,11 @@
     {%- endif -%}
   </div>
 </div>
+
+<style>
+.eva-slide-img--mobile{display:none}
+@media(max-width:767px){.eva-slide-img--desktop{display:none}.eva-slide-img--mobile{display:block}}
+</style>
 
 <script>
 (function(){
@@ -104,8 +127,6 @@
       ]
     }
   ],
-  "presets": [{
-    "name": "Eva Hero Carousel"
-  }]
+  "presets": [{"name": "Eva Hero Carousel"}]
 }
 {% endschema %}
