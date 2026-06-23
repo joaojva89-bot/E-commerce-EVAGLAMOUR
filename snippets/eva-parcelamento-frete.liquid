@@ -1,0 +1,43 @@
+<script>
+(function(){
+  var FRETE_LIMITE = 39997;
+  function formatMoney(cents){
+    return 'R$ ' + (cents/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  function buildHTML(cents){
+    var parc = formatMoney(cents/2);
+    var freteHTML = cents >= FRETE_LIMITE
+      ? '<div class="eva-pf__frete eva-pf__frete--gratis"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span><strong>Frete grátis</strong> para todo o Brasil neste produto!</span></div>'
+      : '<div class="eva-pf__frete"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span>Frete grátis para todo o Brasil acima de <strong>R$399,97</strong></span></div>';
+    return '<div class="eva-pf" id="eva-pf-widget"><div class="eva-pf__parc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><span>ou <strong>2x de ' + parc + '</strong> sem juros</span></div>' + freteHTML + '</div><style>.eva-pf{display:flex;flex-direction:column;gap:6px;margin:8px 0 4px;}.eva-pf__parc,.eva-pf__frete{display:flex;align-items:center;gap:7px;font-size:1.25rem;color:var(--color-foreground);opacity:.85;line-height:1.4;}.eva-pf__parc svg,.eva-pf__frete svg{flex-shrink:0;color:#c4357a;}.eva-pf__frete--gratis{color:#2e7d32;opacity:1;font-weight:600;}.eva-pf__frete--gratis svg{color:#2e7d32;}</style>';
+  }
+  function getPriceCents(){
+    var sel = '.price__regular .price-item--regular, .price .price-item--regular, [data-product-price]';
+    var el = document.querySelector(sel);
+    if(!el) return 0;
+    var txt = el.textContent.replace(/[^\d,]/g,'').replace(',','.');
+    return Math.round(parseFloat(txt)*100);
+  }
+  function inject(cents){
+    if(document.getElementById('eva-pf-widget')) return;
+    var anchor = document.querySelector('.price-wrapper, .product__info-wrapper .price, .product-form');
+    if(!anchor) return;
+    var div = document.createElement('div');
+    div.innerHTML = buildHTML(cents);
+    anchor.parentNode.insertBefore(div, anchor.nextSibling);
+  }
+  function update(cents){
+    var w = document.getElementById('eva-pf-widget');
+    if(!w){ inject(cents); return; }
+    var paEl = w.querySelector('.eva-pf__parc span');
+    if(paEl) paEl.innerHTML = 'ou <strong>2x de '+formatMoney(cents/2)+'</strong> sem juros';
+    var fr = w.querySelector('.eva-pf__frete');
+    if(fr){
+      if(cents>=FRETE_LIMITE){ fr.classList.add('eva-pf__frete--gratis'); fr.querySelector('span').innerHTML='<strong>Frete grátis</strong> para todo o Brasil neste produto!'; }
+      else{ fr.classList.remove('eva-pf__frete--gratis'); fr.querySelector('span').innerHTML='Frete grátis para todo o Brasil acima de <strong>R$399,97</strong>'; }
+    }
+  }
+  document.addEventListener('DOMContentLoaded',function(){ setTimeout(function(){ var c=getPriceCents(); if(c>0) inject(c); },400); });
+  document.addEventListener('variant:change',function(e){ if(e.detail&&e.detail.variant) update(e.detail.variant.price); });
+})();
+</script>

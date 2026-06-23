@@ -1,171 +1,30 @@
-{% comment %} Pop-up de cupom de desconto - aparece 3s após entrada no site {% endcomment %}
-
-<div id="eva-popup-overlay" style="display:none;" aria-modal="true" role="dialog">
-  <div id="eva-popup-box">
-    <button id="eva-popup-close" aria-label="Fechar">✕</button>
-
-    <div id="eva-popup-imagem">
-      <div id="eva-popup-badge">5% OFF</div>
+<div id="eva-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;">
+  <div id="eva-popup-box" style="background:#fff;border-radius:16px;max-width:380px;width:92%;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.18);position:relative;font-family:inherit;">
+    <div style="background:linear-gradient(135deg,#c4357a,#e8703a);padding:32px 24px 24px;text-align:center;">
+      <div style="display:inline-block;background:rgba(255,255,255,0.2);border-radius:50%;width:64px;height:64px;line-height:64px;font-size:2rem;margin-bottom:12px;">🎁</div>
+      <div style="background:#fff;color:#c4357a;font-size:1.5rem;font-weight:800;border-radius:8px;padding:4px 18px;display:inline-block;letter-spacing:1px;">5% OFF</div>
     </div>
-
-    <div id="eva-popup-conteudo">
-      <h2>Você Ganhou 5% OFF</h2>
-      <p>Use o cupom abaixo e ganhe <strong>5% de desconto</strong> em compras acima de <strong>R$149,99</strong>!</p>
-
-      <div id="eva-popup-cupom-wrap">
-        <span id="eva-popup-cupom-codigo">EVA5</span>
-        <button id="eva-popup-copiar">COPIAR</button>
+    <div style="padding:24px 24px 28px;text-align:center;">
+      <h2 style="margin:0 0 8px;font-size:1.5rem;font-weight:700;color:#1a1a1a;">Você Ganhou 5% OFF</h2>
+      <p style="margin:0 0 20px;color:#555;font-size:1.05rem;line-height:1.5;">Use o cupom abaixo na finalização da sua compra:</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;background:#f5f5f5;border:2px dashed #c4357a;border-radius:8px;padding:12px 16px;margin-bottom:20px;">
+        <span id="eva-coupon-code" style="font-size:1.4rem;font-weight:800;letter-spacing:2px;color:#c4357a;">EVA5</span>
+        <button onclick="navigator.clipboard.writeText('EVA5').then(function(){var b=document.getElementById('eva-copy-btn');b.textContent='Copiado!';setTimeout(function(){b.textContent='COPIAR';},2000);})" id="eva-copy-btn" style="background:#c4357a;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:0.85rem;font-weight:700;cursor:pointer;letter-spacing:0.5px;">COPIAR</button>
       </div>
+      <a href="/collections/all" onclick="document.getElementById('eva-popup-overlay').style.display='none';" style="display:block;background:linear-gradient(135deg,#c4357a,#e8703a);color:#fff;text-decoration:none;border-radius:8px;padding:13px;font-size:1.05rem;font-weight:700;">Aproveitar desconto</a>
     </div>
+    <button onclick="document.getElementById('eva-popup-overlay').style.display='none';" style="position:absolute;top:12px;right:14px;background:rgba(255,255,255,0.25);border:none;color:#fff;font-size:1.3rem;line-height:1;cursor:pointer;border-radius:50%;width:28px;height:28px;">✕</button>
   </div>
 </div>
-
-<style>
-  #eva-popup-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 99999;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-  #eva-popup-overlay.eva-popup-visivel { opacity: 1; }
-  #eva-popup-overlay.eva-popup-oculto { opacity: 0; pointer-events: none; }
-  #eva-popup-box {
-    background: #fff;
-    border-radius: 12px;
-    max-width: 480px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    transform: translateY(24px);
-    transition: transform 0.35s ease;
-  }
-  #eva-popup-overlay.eva-popup-visivel #eva-popup-box { transform: translateY(0); }
-  #eva-popup-imagem {
-    background: linear-gradient(135deg, #e91e8c 0%, #ff6b35 60%, #ff9a44 100%);
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #eva-popup-badge {
-    background: rgba(255,255,255,0.15);
-    border: 3px solid rgba(255,255,255,0.5);
-    border-radius: 12px;
-    color: #fff;
-    font-size: 48px;
-    font-weight: 900;
-    padding: 12px 32px;
-    text-align: center;
-    line-height: 1.1;
-    letter-spacing: -1px;
-  }
-  #eva-popup-conteudo { padding: 28px 28px 32px; text-align: center; }
-  #eva-popup-conteudo h2 { font-size: 24px; font-weight: 900; color: #1f1f1f; margin: 0 0 10px; }
-  #eva-popup-conteudo p { font-size: 14px; color: #555; margin: 0 0 22px; line-height: 1.5; }
-  #eva-popup-cupom-wrap { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
-  #eva-popup-cupom-codigo {
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    color: #1f1f1f;
-    border: 2px dashed #c4357a;
-    padding: 10px 20px;
-    border-radius: 6px;
-    user-select: all;
-  }
-  #eva-popup-copiar {
-    background: #c4357a;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    padding: 12px 22px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  #eva-popup-copiar:hover { background: #a02860; }
-  #eva-popup-copiar.copiado { background: #2e7d32; }
-  #eva-popup-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    background: rgba(255,255,255,0.2);
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    transition: background 0.2s;
-  }
-  #eva-popup-close:hover { background: rgba(255,255,255,0.35); }
-  @media (max-width: 480px) {
-    #eva-popup-imagem { height: 140px; }
-    #eva-popup-badge { font-size: 36px; padding: 10px 24px; }
-    #eva-popup-conteudo { padding: 20px 20px 24px; }
-    #eva-popup-conteudo h2 { font-size: 20px; }
-  }
-</style>
-
 <script>
-(function() {
-  var STORAGE_KEY = 'eva_popup_visto';
-  var DELAY_MS = 3000;
-
-  function fecharPopup() {
-    var overlay = document.getElementById('eva-popup-overlay');
-    overlay.classList.remove('eva-popup-visivel');
-    overlay.classList.add('eva-popup-oculto');
-    setTimeout(function() { overlay.style.display = 'none'; }, 350);
-    sessionStorage.setItem(STORAGE_KEY, '1');
-  }
-
-  function abrirPopup() {
-    var overlay = document.getElementById('eva-popup-overlay');
-    overlay.style.display = 'flex';
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        overlay.classList.add('eva-popup-visivel');
-      });
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-    setTimeout(abrirPopup, DELAY_MS);
-    document.getElementById('eva-popup-close').addEventListener('click', fecharPopup);
-    document.getElementById('eva-popup-overlay').addEventListener('click', function(e) {
-      if (e.target === this) fecharPopup();
-    });
-    document.getElementById('eva-popup-copiar').addEventListener('click', function() {
-      var codigo = document.getElementById('eva-popup-cupom-codigo').textContent.trim();
-      navigator.clipboard.writeText(codigo).then(function() {
-        var btn = document.getElementById('eva-popup-copiar');
-        btn.textContent = 'COPIADO!';
-        btn.classList.add('copiado');
-        setTimeout(function() {
-          btn.textContent = 'COPIAR';
-          btn.classList.remove('copiado');
-        }, 2500);
-      });
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') fecharPopup();
-    });
-  });
+(function(){
+  if(sessionStorage.getItem('eva_popup_visto')) return;
+  setTimeout(function(){
+    var el = document.getElementById('eva-popup-overlay');
+    if(el){ el.style.display='flex'; sessionStorage.setItem('eva_popup_visto','1'); }
+  }, 3000);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ var el=document.getElementById('eva-popup-overlay'); if(el) el.style.display='none'; } });
+  var overlay = document.getElementById('eva-popup-overlay');
+  if(overlay){ overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.style.display='none'; }); }
 })();
 </script>
