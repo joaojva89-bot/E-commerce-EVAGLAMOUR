@@ -17,7 +17,7 @@
         "ann-frete": {
           "type": "announcement",
           "settings": {
-            "text": "🚚 Frete grátis a partir de R$150 para Goiás e DF",
+            "text": "🚚 Frete grátis para todo o Brasil acima de R$399,97",
             "link": ""
           }
         },
@@ -38,7 +38,7 @@
         "ann-parcelas": {
           "type": "announcement",
           "settings": {
-            "text": "💳 Parcele em até 10x sem juros",
+            "text": "💳 Parcele em até 2x sem juros",
             "link": ""
           }
         }
