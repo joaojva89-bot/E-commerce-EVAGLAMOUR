@@ -1,0 +1,67 @@
+<script>
+(function () {
+  var FRETE_LIMITE = 39997;
+
+  function fmt(cents) {
+    return 'R$ ' + (cents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function buildBar(total) {
+    var done = total >= FRETE_LIMITE;
+    var pct = Math.min(100, Math.round(total * 100 / FRETE_LIMITE));
+    var msg = done
+      ? '&#x1F389; Você ganhou <strong>frete grátis</strong> para todo o Brasil!'
+      : 'Falta <strong>' + fmt(FRETE_LIMITE - total) + '</strong> para você ganhar <strong>frete grátis</strong>!';
+    return '<div class="eva-fsb-drawer" id="eva-fsb-drawer" style="padding:10px 0 12px;border-bottom:1px solid rgba(0,0,0,0.08);margin-bottom:4px">'
+      + '<p style="font-size:1.3rem;margin:0 0 8px;text-align:center;color:' + (done ? '#2e7d32' : 'inherit') + '">' + msg + '</p>'
+      + '<div style="background:rgba(0,0,0,0.1);border-radius:99px;height:6px;overflow:hidden">'
+      + '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#c4357a,#e8659a);border-radius:99px;transition:width 0.5s ease"></div>'
+      + '</div>'
+      + '</div>';
+  }
+
+  function injectBar(total) {
+    var footer = document.querySelector('#CartDrawer .cart-drawer__footer');
+    if (!footer) return;
+    var existing = document.getElementById('eva-fsb-drawer');
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = buildBar(total);
+    var newBar = wrapper.firstChild;
+    if (existing) {
+      existing.parentNode.replaceChild(newBar, existing);
+    } else {
+      footer.insertBefore(newBar, footer.firstChild);
+    }
+  }
+
+  function refreshBar() {
+    fetch('/cart.js', { credentials: 'same-origin' })
+      .then(function (r) { return r.json(); })
+      .then(function (c) { injectBar(c.total_price || 0); })
+      .catch(function () {});
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.subscribe && window.PUB_SUB_EVENTS && window.PUB_SUB_EVENTS.cartUpdate) {
+      window.subscribe(window.PUB_SUB_EVENTS.cartUpdate, function () {
+        setTimeout(refreshBar, 150);
+      });
+    }
+
+    var cartItems = document.getElementById('CartDrawer-CartItems');
+    if (cartItems) {
+      new MutationObserver(function () {
+        setTimeout(refreshBar, 50);
+      }).observe(cartItems, { childList: true, subtree: true });
+    }
+
+    refreshBar();
+  });
+
+  document.addEventListener('cart-drawer:open', refreshBar);
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[aria-controls="CartDrawer"], [data-target="cart-drawer"]');
+    if (btn) setTimeout(refreshBar, 300);
+  });
+})();
+</script>
