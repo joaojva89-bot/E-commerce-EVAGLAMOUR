@@ -51,12 +51,103 @@
           {%- assign skip_card_product_styles = true -%}
         {% endfor %}
       </ul>
+
+      {%- if section.settings.show_add_all_btn -%}
+        <div class="eva-combo-related" style="text-align:center;margin-top:20px;padding-bottom:10px;">
+          <button
+            type="button"
+            class="eva-combo-related__btn button"
+            id="eva-combo-related-btn-{{ section.id }}"
+            data-section="{{ section.id }}"
+            style="background:#c4357a;color:#fff;border-color:#c4357a;min-width:220px;"
+          >
+            {{ section.settings.add_all_label }}
+          </button>
+        </div>
+      {%- endif -%}
+
     {% endif %}
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
+
+<script>
+(function () {
+  function initComboBtn(sectionId) {
+    var btn = document.getElementById('eva-combo-related-btn-' + sectionId);
+    if (!btn || btn.dataset.evaBound) return;
+    btn.dataset.evaBound = '1';
+
+    btn.addEventListener('click', function () {
+      var recEl = document.querySelector('[data-section-id="' + sectionId + '"]');
+      if (!recEl) return;
+
+      var forms = recEl.querySelectorAll('form[action="/cart/add"]');
+      var items = [];
+      forms.forEach(function (form) {
+        var idInput = form.querySelector('input[name="id"]');
+        if (idInput && idInput.value) {
+          items.push({ id: parseInt(idInput.value, 10), quantity: 1 });
+        }
+      });
+
+      if (!items.length) {
+        alert('Nenhum produto disponível para adicionar.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Adicionando...';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ items: items })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function () {
+          btn.textContent = 'Adicionado ao carrinho!';
+          var drawer = document.getElementById('CartDrawer');
+          if (drawer && typeof drawer.open === 'function') drawer.open();
+          if (window.publish && window.PUB_SUB_EVENTS && window.PUB_SUB_EVENTS.cartUpdate) {
+            fetch('/cart.js').then(function (r) { return r.json(); }).then(function (cart) {
+              window.publish(window.PUB_SUB_EVENTS.cartUpdate, { cart: cart, source: 'eva-combo-related' });
+            });
+          }
+          setTimeout(function () {
+            btn.disabled = false;
+            btn.textContent = btn.getAttribute('data-original-label') || 'Adicionar todos ao carrinho';
+          }, 2500);
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Erro. Tente novamente.';
+          setTimeout(function () {
+            btn.textContent = btn.getAttribute('data-original-label') || 'Adicionar todos ao carrinho';
+          }, 2500);
+        });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[id^="eva-combo-related-btn-"]').forEach(function (btn) {
+      btn.setAttribute('data-original-label', btn.textContent.trim());
+      initComboBtn(btn.dataset.section);
+    });
+
+    var recEls = document.querySelectorAll('product-recommendations');
+    recEls.forEach(function (el) {
+      var observer = new MutationObserver(function () {
+        var sectionId = el.dataset.sectionId;
+        if (sectionId) initComboBtn(sectionId);
+      });
+      observer.observe(el, { childList: true, subtree: true });
+    });
+  });
+})();
+</script>
 
 {% schema %}
 {
@@ -142,6 +233,22 @@
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Botão Adicionar Todos"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_all_btn",
+      "label": "Exibir botão \"Adicionar todos ao carrinho\"",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "add_all_label",
+      "label": "Texto do botão",
+      "default": "Adicionar todos ao carrinho"
     },
     {
       "type": "header",
