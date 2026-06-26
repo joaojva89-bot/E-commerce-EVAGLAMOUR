@@ -667,6 +667,28 @@
                             </div>
                           {%- endif -%}
                         </slideshow-component>
+                        {%- if block.settings.show_add_all_btn -%}
+                          {%- capture eva_compl_variants -%}[
+                            {%- assign eva_first = true -%}
+                            {%- for eva_p in recommendations.products -%}
+                              {%- assign eva_v = eva_p.selected_or_first_available_variant -%}
+                              {%- if eva_v and eva_v.available -%}
+                                {%- unless eva_first %},{% endunless -%}{{ eva_v.id }}
+                                {%- assign eva_first = false -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          ]{%- endcapture -%}
+                          <div class="eva-compl-addall" style="margin-top:14px;text-align:center;">
+                            <button
+                              type="button"
+                              class="eva-compl-addall__btn button"
+                              data-eva-variants="{{ eva_compl_variants | strip_newlines | escape }}"
+                              style="background:#c4357a;color:#fff;border-color:#c4357a;width:100%;"
+                            >
+                              {{ block.settings.add_all_label | default: 'Adicionar todos ao carrinho' }}
+                            </button>
+                          </div>
+                        {%- endif -%}
                         {%- if block.settings.make_collapsible_row -%}
                           </details>
                         {%- endif -%}
@@ -680,6 +702,55 @@
                     <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                   {%- endif -%}
                 </product-recommendations>
+                {%- if block.settings.show_add_all_btn -%}
+                  <script>
+                    (function () {
+                      function evaBindAddAll(root) {
+                        var btn = (root || document).querySelector('.eva-compl-addall__btn');
+                        if (!btn || btn.dataset.evaBound) return;
+                        btn.dataset.evaBound = '1';
+                        var original = btn.textContent.trim();
+                        btn.addEventListener('click', function () {
+                          var raw = btn.getAttribute('data-eva-variants') || '[]';
+                          var ids = [];
+                          try { ids = JSON.parse(raw); } catch (e) { ids = []; }
+                          ids = ids.filter(function (id) { return id; });
+                          if (!ids.length) { return; }
+                          var items = ids.map(function (id) { return { id: parseInt(id, 10), quantity: 1 }; });
+                          btn.disabled = true;
+                          btn.textContent = 'Adicionando...';
+                          fetch('/cart/add.js', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                            body: JSON.stringify({ items: items })
+                          })
+                            .then(function (r) { return r.json(); })
+                            .then(function () {
+                              btn.textContent = 'Adicionado ao carrinho!';
+                              var drawer = document.getElementById('CartDrawer');
+                              if (drawer && typeof drawer.open === 'function') drawer.open();
+                              if (window.publish && window.PUB_SUB_EVENTS && window.PUB_SUB_EVENTS.cartUpdate) {
+                                fetch('/cart.js').then(function (r) { return r.json(); }).then(function (cart) {
+                                  window.publish(window.PUB_SUB_EVENTS.cartUpdate, { cart: cart, source: 'eva-compl-addall' });
+                                });
+                              }
+                              setTimeout(function () { btn.disabled = false; btn.textContent = original; }, 2500);
+                            })
+                            .catch(function () {
+                              btn.disabled = false;
+                              btn.textContent = 'Erro. Tente novamente.';
+                              setTimeout(function () { btn.textContent = original; }, 2500);
+                            });
+                        });
+                      }
+                      document.addEventListener('DOMContentLoaded', function () { evaBindAddAll(document); });
+                      var compl = document.querySelector('product-recommendations.complementary-products');
+                      if (compl) {
+                        new MutationObserver(function () { evaBindAddAll(compl); }).observe(compl, { childList: true, subtree: true });
+                      }
+                    })();
+                  </script>
+                {%- endif -%}
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
             {%- endcase -%}
@@ -1234,6 +1305,18 @@
           "id": "block_heading",
           "default": "t:sections.main-product.blocks.complementary_products.settings.heading.default",
           "label": "t:sections.main-product.blocks.complementary_products.settings.heading.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_add_all_btn",
+          "default": true,
+          "label": "Exibir botão \"Adicionar todos ao carrinho\""
+        },
+        {
+          "type": "text",
+          "id": "add_all_label",
+          "default": "Adicionar todos ao carrinho",
+          "label": "Texto do botão adicionar todos"
         },
         {
           "type": "checkbox",
