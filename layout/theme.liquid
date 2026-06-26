@@ -391,6 +391,7 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {%- render 'eva-frete-cart-js' -%}
     {%- render 'eva-popup-cupom' -%}
     {%- if request.page_type == 'product' -%}
       {%- render 'eva-parcelamento-frete' -%}
