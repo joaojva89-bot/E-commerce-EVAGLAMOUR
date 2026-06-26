@@ -491,6 +491,8 @@
                 -%}
               {%- when 'trust' -%}
                 {%- render 'eva-product-trust', product: product -%}
+              {%- when 'combo_add_all' -%}
+                {%- render 'eva-combo-3', product: product -%}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -927,6 +929,11 @@
           "default": "circle"
         }
       ]
+    },
+    {
+      "type": "combo_add_all",
+      "name": "Botão Kit Completo",
+      "limit": 1
     },
     {
       "type": "buy_buttons",

@@ -1,0 +1,29 @@
+{%- assign eva_frete_limite = 39997 -%}
+{%- if cart != empty -%}
+  {%- assign eva_cart_total = cart.total_price -%}
+  {%- if eva_cart_total < eva_frete_limite -%}
+    {%- assign eva_remaining = eva_frete_limite | minus: eva_cart_total -%}
+    {%- assign eva_progress = eva_cart_total | times: 100 | divided_by: eva_frete_limite -%}
+  {%- else -%}
+    {%- assign eva_progress = 100 -%}
+  {%- endif -%}
+  <div class="eva-fsb">
+    {%- if eva_cart_total >= eva_frete_limite -%}
+      <p class="eva-fsb__text eva-fsb__text--done">🎉 Você ganhou <strong>frete grátis</strong> para todo o Brasil!</p>
+    {%- else -%}
+      <p class="eva-fsb__text">Falta <strong>{{ eva_remaining | money }}</strong> para você ganhar <strong>frete grátis</strong>!</p>
+    {%- endif -%}
+    <div class="eva-fsb__track">
+      <div class="eva-fsb__fill" style="width: {{ eva_progress }}%"></div>
+    </div>
+  </div>
+  <style>
+    .eva-fsb { padding: 10px 0 14px; }
+    .eva-fsb__text { font-size: 1.4rem; margin: 0 0 10px; text-align: center; color: var(--color-foreground); }
+    .eva-fsb__text strong { color: #c4357a; }
+    .eva-fsb__text--done { color: #2e7d32 !important; font-weight: 600; }
+    .eva-fsb__text--done strong { color: #2e7d32 !important; }
+    .eva-fsb__track { background: rgba(0,0,0,0.1); border-radius: 99px; height: 7px; overflow: hidden; }
+    .eva-fsb__fill { height: 100%; background: linear-gradient(90deg, #c4357a, #e8659a); border-radius: 99px; }
+  </style>
+{%- endif -%}
