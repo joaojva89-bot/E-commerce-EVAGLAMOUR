@@ -16,7 +16,9 @@
       "blocks": {
         "bloco_sobre": {
           "type": "brand_information",
-          "settings": {}
+          "settings": {
+            "show_social": true
+          }
         },
         "bloco_atendimento": {
           "type": "link_list",
@@ -36,7 +38,7 @@
           "type": "text",
           "settings": {
             "heading": "Fale conosco",
-            "subtext": "<p>WhatsApp: (61) 99192-9550<br>Seg–Sex: 9h–18h | Sáb: 9h–13h</p><p>contato@evaglamour.com.br</p>"
+            "subtext": "<p>WhatsApp: (61) 99203-3417<br/>Seg–Sáb 9h–18h30 | Dom: 9h–13h</p><p>evaglamour3@gmail.com</p>"
           }
         }
       },
