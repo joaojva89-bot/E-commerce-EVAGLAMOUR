@@ -64,10 +64,10 @@ variant-selects {
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
   display: inline-block;
-  margin: 0.7rem 0.5rem 0.2rem 0;
-  padding: 1rem 2rem;
-  font-size: 1.4rem;
-  letter-spacing: 0.1rem;
+  margin: 0.6rem 0.4rem 0.2rem 0;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.05rem;
   line-height: 1;
   text-align: center;
   transition: border var(--duration-short) ease;
