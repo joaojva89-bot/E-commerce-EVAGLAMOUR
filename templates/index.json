@@ -40,7 +40,11 @@
           }
         }
       },
-      "block_order": ["slide1", "slide2", "slide3"],
+      "block_order": [
+        "slide1",
+        "slide2",
+        "slide3"
+      ],
       "settings": {}
     },
     "eva_brand_marquee_MzefRD": {
@@ -82,143 +86,410 @@
     "featured_product_wepnkm": {
       "type": "featured-product",
       "blocks": {
-        "text_UDtPLf": {"type": "text", "settings": {"text": "{{ section.settings.product.vendor }}", "text_style": "uppercase"}},
-        "title_LE7E8t": {"type": "title", "settings": {"heading_size": "h2"}},
-        "price_Y9btdj": {"type": "price", "settings": {}},
-        "variant_picker_bqn8Qc": {"type": "variant_picker", "settings": {"picker_type": "button", "swatch_shape": "circle"}},
-        "buy_buttons_HkPezz": {"type": "buy_buttons", "settings": {"show_dynamic_checkout": true, "show_gift_card_recipient": true}}
+        "text_UDtPLf": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_LE7E8t": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_Y9btdj": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_bqn8Qc": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_HkPezz": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
       },
-      "block_order": ["text_UDtPLf", "title_LE7E8t", "price_Y9btdj", "variant_picker_bqn8Qc", "buy_buttons_HkPezz"],
+      "block_order": [
+        "text_UDtPLf",
+        "title_LE7E8t",
+        "price_Y9btdj",
+        "variant_picker_bqn8Qc",
+        "buy_buttons_HkPezz"
+      ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
         "product": "bota-feminina-napa-cano-alto-com-salto-marron-9076-113",
-        "color_scheme": "scheme-2", "secondary_background": false, "media_size": "medium",
-        "constrain_to_viewport": true, "media_fit": "contain", "media_position": "left",
-        "image_zoom": "lightbox", "hide_variants": false, "enable_video_looping": false,
-        "padding_top": 12, "padding_bottom": 12
+        "color_scheme": "scheme-2",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "featured_collection_4jCUfX": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "lacinho", "products_to_show": 25, "title": "LACINHO",
-        "heading_size": "h2", "description": "", "show_description": false, "description_style": "body",
-        "columns_desktop": 6, "enable_desktop_slider": true, "full_width": true,
-        "show_view_all": true, "view_all_style": "solid", "color_scheme": "scheme-1",
-        "image_ratio": "adapt", "image_shape": "default", "show_secondary_image": false,
-        "show_vendor": false, "show_rating": false, "quick_add": "none",
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 12, "padding_bottom": 0
+        "collection": "lacinho",
+        "products_to_show": 25,
+        "title": "LACINHO",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 6,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 0
       }
     },
     "featured_product_HBMJmb": {
       "type": "featured-product",
       "blocks": {
-        "text_z3CFNJ": {"type": "text", "settings": {"text": "{{ section.settings.product.vendor }}", "text_style": "uppercase"}},
-        "title_akdHcd": {"type": "title", "settings": {"heading_size": "h2"}},
-        "price_UKPnna": {"type": "price", "settings": {}},
-        "variant_picker_n39btG": {"type": "variant_picker", "settings": {"picker_type": "button", "swatch_shape": "circle"}},
-        "buy_buttons_iEzLQ7": {"type": "buy_buttons", "settings": {"show_dynamic_checkout": true, "show_gift_card_recipient": true}}
+        "text_z3CFNJ": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_akdHcd": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_UKPnna": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_n39btG": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_iEzLQ7": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
       },
-      "block_order": ["text_z3CFNJ", "title_akdHcd", "price_UKPnna", "variant_picker_n39btG", "buy_buttons_iEzLQ7"],
+      "block_order": [
+        "text_z3CFNJ",
+        "title_akdHcd",
+        "price_UKPnna",
+        "variant_picker_n39btG",
+        "buy_buttons_iEzLQ7"
+      ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "product": "sandalia-modare-de-lacinho-verde-militar-7208-101",
-        "color_scheme": "scheme-1", "secondary_background": false, "media_size": "small",
-        "constrain_to_viewport": true, "media_fit": "contain", "media_position": "left",
-        "image_zoom": "lightbox", "hide_variants": false, "enable_video_looping": false,
-        "padding_top": 12, "padding_bottom": 12
+        "product": "papetes-sandalia-modare-lacinho-avela-7208-101",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "featured_collection_jam4n8": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "esportivos", "products_to_show": 10, "title": "ESPORTIVOS",
-        "heading_size": "h2", "description": "", "show_description": false, "description_style": "body",
-        "columns_desktop": 6, "enable_desktop_slider": true, "full_width": true,
-        "show_view_all": true, "view_all_style": "solid", "color_scheme": "scheme-4",
-        "image_ratio": "adapt", "image_shape": "default", "show_secondary_image": false,
-        "show_vendor": false, "show_rating": false, "quick_add": "none",
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 12, "padding_bottom": 12
+        "collection": "esportivos",
+        "products_to_show": 10,
+        "title": "ESPORTIVOS",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 6,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-4",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "featured_product_HfbPHR": {
       "type": "featured-product",
       "blocks": {
-        "text_YU4zpm": {"type": "text", "settings": {"text": "{{ section.settings.product.vendor }}", "text_style": "uppercase"}},
-        "title_hGRFxB": {"type": "title", "settings": {"heading_size": "h2"}},
-        "price_jQNahz": {"type": "price", "settings": {}},
-        "variant_picker_MLjDyG": {"type": "variant_picker", "settings": {"picker_type": "button", "swatch_shape": "circle"}},
-        "buy_buttons_UchRdd": {"type": "buy_buttons", "settings": {"show_dynamic_checkout": true, "show_gift_card_recipient": true}}
+        "text_YU4zpm": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_hGRFxB": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_jQNahz": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_MLjDyG": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_UchRdd": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
       },
-      "block_order": ["text_YU4zpm", "title_hGRFxB", "price_jQNahz", "variant_picker_MLjDyG", "buy_buttons_UchRdd"],
+      "block_order": [
+        "text_YU4zpm",
+        "title_hGRFxB",
+        "price_jQNahz",
+        "variant_picker_MLjDyG",
+        "buy_buttons_UchRdd"
+      ],
       "name": "t:sections.featured-product.presets.name",
       "settings": {
         "product": "tenis-casual-preto-com-rosa-4841-115",
-        "color_scheme": "scheme-4", "secondary_background": false, "media_size": "medium",
-        "constrain_to_viewport": true, "media_fit": "contain", "media_position": "left",
-        "image_zoom": "lightbox", "hide_variants": false, "enable_video_looping": false,
-        "padding_top": 12, "padding_bottom": 12
+        "color_scheme": "scheme-4",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "collection_list": {
       "type": "collection-list",
       "blocks": {
-        "c5": {"type": "featured_collection", "settings": {"collection": "papetes"}},
-        "featured_collection_gjhAbC": {"type": "featured_collection", "settings": {"collection": "tenis-casuais"}},
-        "featured_collection_3MkBCT": {"type": "featured_collection", "settings": {"collection": "rasteiras"}},
-        "c1": {"type": "featured_collection", "settings": {"collection": "saltos"}}
+        "c5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "papetes"
+          }
+        },
+        "featured_collection_gjhAbC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tenis-casuais"
+          }
+        },
+        "featured_collection_3MkBCT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rasteiras"
+          }
+        },
+        "c1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "saltos"
+          }
+        }
       },
-      "block_order": ["c5", "featured_collection_gjhAbC", "featured_collection_3MkBCT", "c1"],
+      "block_order": [
+        "c5",
+        "featured_collection_gjhAbC",
+        "featured_collection_3MkBCT",
+        "c1"
+      ],
       "settings": {
-        "title": "Comprar por Modelo", "heading_size": "h2", "image_ratio": "square",
-        "columns_desktop": 4, "color_scheme": "scheme-1", "show_view_all": false,
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 36, "padding_bottom": 36
+        "title": "Comprar por Modelo",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collection_list_novas": {
       "type": "collection-list",
       "blocks": {
-        "n1": {"type": "featured_collection", "settings": {"collection": "bolsas"}},
-        "n2": {"type": "featured_collection", "settings": {"collection": "botas"}},
-        "n3": {"type": "featured_collection", "settings": {"collection": "esportivos"}},
-        "n4": {"type": "featured_collection", "settings": {"collection": "infantil"}}
+        "n1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bolsas"
+          }
+        },
+        "n2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "botas"
+          }
+        },
+        "n3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "esportivos"
+          }
+        },
+        "n4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "infantil"
+          }
+        }
       },
-      "block_order": ["n1", "n2", "n3", "n4"],
+      "block_order": [
+        "n1",
+        "n2",
+        "n3",
+        "n4"
+      ],
       "settings": {
-        "title": "", "heading_size": "h2", "image_ratio": "square",
-        "columns_desktop": 4, "color_scheme": "scheme-1", "show_view_all": true,
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 0, "padding_bottom": 36
+        "title": "",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
       }
     },
     "featured_collection_bwc7pB": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "vizzano", "products_to_show": 25, "title": "VIZZANO",
-        "heading_size": "h1", "description": "", "show_description": false, "description_style": "body",
-        "columns_desktop": 6, "enable_desktop_slider": true, "full_width": true,
-        "show_view_all": true, "view_all_style": "solid", "color_scheme": "scheme-4",
-        "image_ratio": "adapt", "image_shape": "default", "show_secondary_image": false,
-        "show_vendor": false, "show_rating": false, "quick_add": "none",
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 12, "padding_bottom": 12
+        "collection": "vizzano",
+        "products_to_show": 25,
+        "title": "VIZZANO",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 6,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-4",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "collection_list_marcas": {
       "type": "collection-list",
       "blocks": {
-        "m1": {"type": "featured_collection", "settings": {"collection": "vizzano"}},
-        "m2": {"type": "featured_collection", "settings": {"collection": "modare"}},
-        "m3": {"type": "featured_collection", "settings": {"collection": "beira-rio"}},
-        "m4": {"type": "featured_collection", "settings": {"collection": "moleca"}},
-        "m5": {"type": "featured_collection", "settings": {"collection": "actvitta"}}
+        "m1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vizzano"
+          }
+        },
+        "m2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "modare"
+          }
+        },
+        "m3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beira-rio"
+          }
+        },
+        "m4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "moleca"
+          }
+        },
+        "m5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "actvitta"
+          }
+        }
       },
-      "block_order": ["m1", "m2", "m3", "m4", "m5"],
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5"
+      ],
       "settings": {
-        "title": "", "heading_size": "h2", "image_ratio": "square",
-        "columns_desktop": 5, "color_scheme": "scheme-1", "show_view_all": false,
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 36, "padding_bottom": 36
+        "title": "",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "diferenciais": {
@@ -229,7 +500,8 @@
           "settings": {
             "title": "Frete Grátis",
             "text": "<p>Para compras acima de R$399,97 para todo o Brasil</p>",
-            "link_label": "", "link": ""
+            "link_label": "",
+            "link": ""
           }
         },
         "d2": {
@@ -237,7 +509,8 @@
           "settings": {
             "title": "2x sem juros",
             "text": "<p>Parcele em até 2x sem juros em todas as marcas</p>",
-            "link_label": "", "link": ""
+            "link_label": "",
+            "link": ""
           }
         },
         "d3": {
@@ -245,7 +518,8 @@
           "settings": {
             "title": "Troca Garantida",
             "text": "<p>Troque sem burocracia em até 30 dias</p>",
-            "link_label": "", "link": ""
+            "link_label": "",
+            "link": ""
           }
         },
         "d4": {
@@ -258,13 +532,27 @@
           }
         }
       },
-      "block_order": ["d1", "d2", "d3", "d4"],
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4"
+      ],
       "settings": {
         "title": "Por que a Eva Glamour?",
-        "heading_size": "h2", "image_width": "full", "image_ratio": "adapt",
-        "button_label": "", "button_link": "", "columns_desktop": 4,
-        "column_alignment": "center", "background_style": "none", "color_scheme": "",
-        "columns_mobile": "2", "swipe_on_mobile": false, "padding_top": 36, "padding_bottom": 36
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "depoimentos": {
@@ -274,37 +562,54 @@
           "type": "depoimento",
           "settings": {
             "texto": "Comprei uma sandália Vizzano e me apaixonei! O acabamento é perfeito e chegou em 2 dias. Já é a terceira vez que compro na Eva Glamour.",
-            "nome": "Camila R.", "produto": "Sandália Vizzano"
+            "nome": "Camila R.",
+            "produto": "Sandália Vizzano"
           }
         },
         "d2": {
           "type": "depoimento",
           "settings": {
             "texto": "Sempre encontro meu número aqui, o que é difícil porque tenho pé largo. Atendimento pelo WhatsApp foi super rápido quando tive dúvida.",
-            "nome": "Fernanda M.", "produto": "Tênis Modare"
+            "nome": "Fernanda M.",
+            "produto": "Tênis Modare"
           }
         },
         "d3": {
           "type": "depoimento",
           "settings": {
             "texto": "A troca foi sem burocracia nenhuma. Pedi o tamanho errado e resolveram tudo em menos de uma semana. Recomendo demais!",
-            "nome": "Juliana P.", "produto": "Scarpin Beira Rio"
+            "nome": "Juliana P.",
+            "produto": "Scarpin Beira Rio"
           }
         }
       },
-      "block_order": ["d1", "d2", "d3"],
+      "block_order": [
+        "d1",
+        "d2",
+        "d3"
+      ],
       "settings": {
         "title": "O que nossas clientes dizem",
         "subtitle": "Mais de 13 anos de clientes satisfeitas",
-        "padding_top": 52, "padding_bottom": 52
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
-    "eva_hero", "eva_brand_marquee_MzefRD", "featured_collection_HnM8Qj",
-    "featured_product_wepnkm", "featured_collection_4jCUfX", "featured_product_HBMJmb",
-    "featured_collection_jam4n8", "featured_product_HfbPHR", "collection_list",
-    "collection_list_novas", "featured_collection_bwc7pB", "collection_list_marcas",
-    "diferenciais", "depoimentos"
+    "eva_hero",
+    "eva_brand_marquee_MzefRD",
+    "featured_collection_HnM8Qj",
+    "featured_product_wepnkm",
+    "featured_collection_4jCUfX",
+    "featured_product_HBMJmb",
+    "featured_collection_jam4n8",
+    "featured_product_HfbPHR",
+    "collection_list",
+    "collection_list_novas",
+    "featured_collection_bwc7pB",
+    "collection_list_marcas",
+    "diferenciais",
+    "depoimentos"
   ]
 }
