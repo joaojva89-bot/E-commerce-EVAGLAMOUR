@@ -730,7 +730,9 @@ class SliderComponent extends HTMLElement {
     super();
     this.slider = this.querySelector('[id^="Slider-"]');
     this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
-    this.enableSliderLooping = false;
+    // Loop infinito opcional via data-loop="true" (ex.: carrossel de miniaturas).
+    // Mantem os botoes sempre ativos e faz o clique dar a volta (fim -> inicio).
+    this.enableSliderLooping = this.dataset.loop === 'true';
     this.currentPageElement = this.querySelector('.slider-counter--current');
     this.pageTotalElement = this.querySelector('.slider-counter--total');
     this.prevButton = this.querySelector('button[name="previous"]');
@@ -810,6 +812,23 @@ class SliderComponent extends HTMLElement {
   onButtonClick(event) {
     event.preventDefault();
     const step = event.currentTarget.dataset.step || 1;
+
+    // Carrossel infinito (data-loop): ao passar do fim volta ao inicio e, no
+    // inicio, o "anterior" pula para o fim - dando a sensacao de rotativo.
+    if (this.dataset.loop === 'true') {
+      const maxScroll = this.slider.scrollWidth - this.slider.clientWidth;
+      const atStart = this.slider.scrollLeft <= 1;
+      const atEnd = this.slider.scrollLeft >= maxScroll - 1;
+      if (event.currentTarget.name === 'next' && atEnd) {
+        this.setSlidePosition(0);
+        return;
+      }
+      if (event.currentTarget.name === 'previous' && atStart) {
+        this.setSlidePosition(maxScroll);
+        return;
+      }
+    }
+
     this.slideScrollPosition =
       event.currentTarget.name === 'next'
         ? this.slider.scrollLeft + step * this.sliderItemOffset
