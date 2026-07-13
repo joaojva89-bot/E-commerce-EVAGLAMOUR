@@ -60,11 +60,15 @@
         "complementary_combo": {
           "type": "complementary",
           "settings": {
+            "block_heading": "Combina bem com",
+            "show_add_all_btn": true,
+            "add_all_label": "Adicionar todos ao carrinho",
             "make_collapsible_row": false,
+            "icon": "price_tag",
             "product_list_limit": 3,
             "products_per_page": 3,
             "pagination_style": "dots",
-            "image_ratio": "square",
+            "image_ratio": "portrait",
             "enable_quick_add": true
           }
         },
@@ -123,6 +127,8 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
+        "show_add_all_btn": false,
+        "add_all_label": "Adicionar todos ao carrinho",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,

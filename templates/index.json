@@ -65,7 +65,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 6,
+        "columns_desktop": 5,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
@@ -137,7 +137,7 @@
         "image_zoom": "lightbox",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 12,
+        "padding_top": 0,
         "padding_bottom": 12
       }
     },
@@ -152,10 +152,10 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "columns_desktop": 6,
+        "columns_desktop": 5,
         "enable_desktop_slider": true,
         "full_width": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
@@ -224,7 +224,7 @@
         "image_zoom": "none",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 12,
+        "padding_top": 0,
         "padding_bottom": 12
       }
     },
@@ -242,7 +242,7 @@
         "columns_desktop": 6,
         "enable_desktop_slider": true,
         "full_width": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-4",
         "image_ratio": "adapt",
@@ -311,7 +311,7 @@
         "image_zoom": "lightbox",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 12,
+        "padding_top": 0,
         "padding_bottom": 12
       }
     },
@@ -321,7 +321,7 @@
         "c5": {
           "type": "featured_collection",
           "settings": {
-            "collection": "papetes"
+            "collection": "papetes-1"
           }
         },
         "featured_collection_gjhAbC": {
@@ -561,25 +561,28 @@
         "d1": {
           "type": "depoimento",
           "settings": {
-            "texto": "Comprei uma sandália Vizzano e me apaixonei! O acabamento é perfeito e chegou em 2 dias. Já é a terceira vez que compro na Eva Glamour.",
+            "texto": "Comprei uma sandália Vizzano e me apaixonei! O acabamento é perfeito e chegou em 4 dias. Já é a terceira vez que compro na Eva Glamour.",
             "nome": "Camila R.",
-            "produto": "Sandália Vizzano"
+            "produto": "Sandália Vizzano",
+            "foto": "shopify://shop_images/2f0abe86de84a41b2f7783bad19a232f.jpg"
           }
         },
         "d2": {
           "type": "depoimento",
           "settings": {
             "texto": "Sempre encontro meu número aqui, o que é difícil porque tenho pé largo. Atendimento pelo WhatsApp foi super rápido quando tive dúvida.",
-            "nome": "Fernanda M.",
-            "produto": "Tênis Modare"
+            "nome": "Fernanda_114",
+            "produto": "Tênis Modare",
+            "foto": "shopify://shop_images/194aacd71aadd4bebfd3df436bcaa458.jpg"
           }
         },
         "d3": {
           "type": "depoimento",
           "settings": {
             "texto": "A troca foi sem burocracia nenhuma. Pedi o tamanho errado e resolveram tudo em menos de uma semana. Recomendo demais!",
-            "nome": "Juliana P.",
-            "produto": "Scarpin Beira Rio"
+            "nome": "Juliana Pereira",
+            "produto": "Scarpin Beira Rio",
+            "foto": "shopify://shop_images/7b241868f029657b975d63af4480803f.jpg"
           }
         }
       },
@@ -590,7 +593,7 @@
       ],
       "settings": {
         "title": "O que nossas clientes dizem",
-        "subtitle": "Mais de 13 anos de clientes satisfeitas",
+        "subtitle": "Mais de 3 anos de clientes satisfeitas",
         "padding_top": 52,
         "padding_bottom": 52
       }
