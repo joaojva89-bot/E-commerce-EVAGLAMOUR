@@ -5,15 +5,14 @@
 .eva-track{display:flex;transition:transform .9s cubic-bezier(.7,0,.2,1)}
 .eva-slide{min-width:100%;position:relative;flex-shrink:0}
 .eva-slide-link{display:block;width:100%;line-height:0}
-.eva-slide-img{width:100%;height:auto;display:block}
-.eva-slide-img--mobile{display:none}
+.eva-slide-img{width:100%;height:auto;display:block;aspect-ratio:var(--eva-ar-d,1.9)}
 .eva-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.18);border:none;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#fff}
 .eva-nav:hover{background:rgba(255,255,255,.35)}
 .eva-nav--prev{left:16px}.eva-nav--next{right:16px}
 .eva-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
 .eva-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);border:none;cursor:pointer;padding:0;transition:background .2s}
 .eva-dot.active{background:#fff}
-@media(max-width:767px){.eva-slide-img--desktop{display:none}.eva-slide-img--mobile{display:block}.eva-nav{display:none}}
+@media(max-width:767px){.eva-slide-img{aspect-ratio:var(--eva-ar-m,.8)}.eva-nav{display:none}}
 </style>
 
 <div class="eva-carousel-wrap" id="evc-{{ section.id }}">
@@ -25,12 +24,15 @@
             {%- assign dimg = block.settings.desktop_image -%}
             {%- assign mimg = block.settings.mobile_image -%}
             {%- assign link = block.settings.button_link | default: '/collections/botas' -%}
+            {%- if dimg != blank -%}{%- assign base_img = dimg -%}{%- else -%}{%- assign base_img = mimg -%}{%- endif -%}
             <a href="{{ link }}" class="eva-slide-link" aria-label="{{ block.settings.button_label | default: 'Confira a colecao' }}">
-              {%- if dimg != blank -%}
-                <img src="{{ dimg | image_url: width: 1920 }}" srcset="{{ dimg | image_url: width: 800 }} 800w, {{ dimg | image_url: width: 1200 }} 1200w, {{ dimg | image_url: width: 1920 }} 1920w" sizes="100vw" alt="{{ dimg.alt | default: '' }}" class="eva-slide-img eva-slide-img--desktop" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
-              {%- endif -%}
-              {%- if mimg != blank -%}
-                <img src="{{ mimg | image_url: width: 800 }}" srcset="{{ mimg | image_url: width: 600 }} 600w, {{ mimg | image_url: width: 800 }} 800w" sizes="100vw" alt="{{ mimg.alt | default: '' }}" class="eva-slide-img eva-slide-img--mobile" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+              {%- if base_img != blank -%}
+                <picture style="--eva-ar-d:{{ dimg.aspect_ratio | default: base_img.aspect_ratio }};--eva-ar-m:{{ mimg.aspect_ratio | default: base_img.aspect_ratio }}">
+                  {%- if mimg != blank and dimg != blank -%}
+                    <source media="(max-width:767px)" srcset="{{ mimg | image_url: width: 600 }} 600w, {{ mimg | image_url: width: 800 }} 800w, {{ mimg | image_url: width: 1080 }} 1080w" sizes="100vw">
+                  {%- endif -%}
+                  <img src="{{ base_img | image_url: width: 1600 }}" srcset="{{ base_img | image_url: width: 800 }} 800w, {{ base_img | image_url: width: 1200 }} 1200w, {{ base_img | image_url: width: 1920 }} 1920w" sizes="100vw" alt="{{ base_img.alt | default: '' }}" class="eva-slide-img" width="{{ base_img.width }}" height="{{ base_img.height }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"{% if forloop.first %} fetchpriority="high"{% endif %}>
+                </picture>
               {%- endif -%}
             </a>
           </div>
